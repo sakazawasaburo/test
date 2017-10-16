@@ -41,7 +41,7 @@ public class userService implements UserDetailsService {
     }
 
     @Transactional
-    public void registerUser(String custid,String username, String orgname,String password) {
+    public void registerUser(String custid,String username,String orgname,String password) {
         User user = new User(custid,username, orgname, passwordEncoder.encode(password));
         repository.save(user);
     }

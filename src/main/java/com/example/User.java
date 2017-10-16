@@ -27,13 +27,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 public class User implements UserDetails {
 
-    private static final long serialVersionUID = 1L;
+    //private static final long serialVersionUID = 1L;
 
-    public enum Authority {ROLE_USER, ROLE_ADMIN}
+    //public enum Authority {ROLE_USER, ROLE_ADMIN}
 
+	/*
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    */
 
 
     @Column(nullable = false, unique = true)
@@ -74,10 +76,12 @@ public class User implements UserDetails {
         this.authorities = EnumSet.of(Authority.ROLE_USER);
     }
 
+    /*
     @PrePersist
     public void prePersist() {
         this.createdAt = new Date();
     }
+
 
     public boolean isAdmin() {
         return this.authorities.contains(Authority.ROLE_ADMIN);
@@ -114,6 +118,7 @@ public class User implements UserDetails {
     public boolean isCredentialsNonExpired() {
         return true;
     }
+    */
 
 
 
@@ -162,14 +167,5 @@ public class User implements UserDetails {
         this.enabled = enabled;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
 
 }
