@@ -1,12 +1,17 @@
-/*package com.example;
+package com.example;
 
-import com.example.userdata;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+@Repository
+public interface UserRepository extends CrudRepository<User, Long> {
 
-	@Repository
-	public interface UserRepository extends JpaRepository<userdata,String>{
-	}
+	public User findByCustid(String custid);
 
-*/
+    public User findByUsername(String username);
+
+    public User findByOrgname(String orgname);
+
+    public User findByPassword(String password);
+
+}
