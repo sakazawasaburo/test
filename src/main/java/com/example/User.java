@@ -160,7 +160,7 @@ public class User implements UserDetails {
 
 
 
-
+/*
     @Override
     public boolean isEnabled() {
         return this.enabled;
@@ -169,6 +169,6 @@ public class User implements UserDetails {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
-
+*/
 
 }
