@@ -75,9 +75,8 @@ public class User implements UserDetails {
     	this.username = username;
     	this.orgname = orgname;
         this.password = password;
-
-        this.enabled = true;
-        this.authorities = EnumSet.of(Authority.ROLE_USER);
+        //this.enabled = true;
+        //this.authorities = EnumSet.of(Authority.ROLE_USER);
     }
 
     /*
