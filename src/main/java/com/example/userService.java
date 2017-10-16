@@ -16,6 +16,7 @@ public class userService implements UserDetailsService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    /*
     @Override
     public User loadUserByUsername(String username) throws UsernameNotFoundException {
         if (username == null || "".equals(username)) {
@@ -29,6 +30,8 @@ public class userService implements UserDetailsService {
 
         return user;
     }
+
+*/
 
     @Transactional
     public void registerAdmin(String custid,String username, String orgname,String password) {
