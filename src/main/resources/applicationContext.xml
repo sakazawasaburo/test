@@ -1,9 +1,23 @@
-<!--
-<div>
-	<sec:authorize access="hasAuthority('ADMIN')">
-		<li>
-			<a href="/index">ラスカル</a>
-		</li>
-	</sec:authorize>
-</div>
--->
+<!-- EntityManagerFactory (EntityManagerを生成するファクトリ)の設定 -->
+<bean id="entityManagerFactory"
+	class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+	<property name ="dataSource" ref="dataSource" />
+	<property name ="persistenceProviderClass" value="org.hibernate.jpa.HibernatePersistenceProvider" />
+	<property name ="packagesToScan" value="User.entity"/>
+	<property name ="jpaProperties">
+		<props>
+			<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+			<prop key="hibernate.show_sql">true</prop>
+			<prop key="hibernate.ejb.naming_strategy"org.hibernate.cfg.ImprovedNamingStrategy</prop>
+		</props>
+	</property>
+</bean>
+
+
+<!--  JPA Repositoryの設定 -->
+<jpa:repositories base-package="sample"/>
+
+<!-- TransactionManagerの設定 -->
+<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+	<property name="entityManagerFactory" ref="entityManagerFactory"/>
+</bean>
