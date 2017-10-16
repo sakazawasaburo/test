@@ -31,11 +31,11 @@ public class User implements UserDetails {
 
     //public enum Authority {ROLE_USER, ROLE_ADMIN}
 
-	/*
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    */
+
 
 
     @Column(nullable = false, unique = true)
