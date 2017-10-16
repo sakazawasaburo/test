@@ -35,7 +35,7 @@ public class userService implements UserDetailsService {
 
     @Transactional
     public void registerAdmin(String custid,String username, String orgname,String password) {
-        User user = new User(custid,username,orgname, passwordEncoder.encode(password), );
+        User user = new User(custid,username,orgname, passwordEncoder.encode(password));
         user.setAdmin(true);
         repository.save(user);
     }
