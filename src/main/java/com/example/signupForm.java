@@ -37,8 +37,8 @@ public class signupForm {
         this.username = username;
     }
 
-    public String getUsername() {
-        return username;
+    public String getOrgname() {
+        return orgname;
     }
 
     public void setOrgname(String orgname) {

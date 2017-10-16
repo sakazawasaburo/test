@@ -122,7 +122,6 @@ public class User implements UserDetails {
     public String getCustid() {
         return custid;
     }
-
     public void setCustid(String custid) {
         this.custid = custid;
     }
@@ -131,7 +130,6 @@ public class User implements UserDetails {
     public String getUsername() {
         return username;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
@@ -140,7 +138,6 @@ public class User implements UserDetails {
     public String getOrgname() {
         return orgname;
     }
-
     public void setOrgname(String orgname) {
         this.orgname = orgname;
     }
@@ -149,7 +146,6 @@ public class User implements UserDetails {
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
