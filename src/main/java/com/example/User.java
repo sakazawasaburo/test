@@ -51,17 +51,21 @@ public class User implements UserDetails {
     private String password;
 
 
-
+/*
     @Column(nullable = false)
     private boolean enabled;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
+*/
+
+    /*
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Set<Authority> authorities;
+    */
 
     // JPA requirement
     protected User() {}
