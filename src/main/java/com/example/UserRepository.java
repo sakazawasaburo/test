@@ -9,7 +9,7 @@ import com.example.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	/*
+
 	public User findByCustid(String custid);
 
     public User findByUsername(String username);
@@ -17,7 +17,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     public User findByOrgname(String orgname);
 
     public User findByPassword(String password);
-	*/
+
 
 
 }
