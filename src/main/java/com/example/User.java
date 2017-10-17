@@ -126,7 +126,7 @@ public class User implements UserDetails {
 
 
 
-    @Override
+    //@Override
     public String getCustid() {
         return custid;
     }
@@ -134,7 +134,7 @@ public class User implements UserDetails {
         this.custid = custid;
     }
 
-    @Override
+    //@Override
     public String getUsername() {
         return username;
     }
@@ -142,7 +142,7 @@ public class User implements UserDetails {
         this.username = username;
     }
 
-    @Override
+    //@Override
     public String getOrgname() {
         return orgname;
     }
@@ -150,7 +150,7 @@ public class User implements UserDetails {
         this.orgname = orgname;
     }
 
-    @Override
+    //@Override
     public String getPassword() {
         return password;
     }
