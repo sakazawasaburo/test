@@ -50,7 +50,10 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- Spring Jpa -->
-
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 		<!-- Spring Jpa -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
