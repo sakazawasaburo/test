@@ -1,4 +1,4 @@
-/* package com.example;
+ package com.example;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -80,8 +80,8 @@ public class User
         //this.enabled = true;
         //this.authorities = EnumSet.of(Authority.ROLE_USER);
     }
-*/
-    /*
+
+ /*
     @PrePersist
     public void prePersist() {
         this.createdAt = new Date();
@@ -123,7 +123,7 @@ public class User
     public boolean isCredentialsNonExpired() {
         return true;
     }
-
+*/
 
 
 
@@ -163,7 +163,7 @@ public class User
 
 
 
-
+/*
     @Override
     public boolean isEnabled() {
         return this.enabled;
@@ -172,8 +172,7 @@ public class User
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
-
+*/
 
 }
 
-*/
