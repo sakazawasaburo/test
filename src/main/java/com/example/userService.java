@@ -17,7 +17,7 @@ public class userService implements UserDetailsService {
     private PasswordEncoder passwordEncoder;
 
 
-
+/*
     @Override
     public User loadUserByUsername(String username) throws UsernameNotFoundException {
         if (username == null || "".equals(username)) {
@@ -31,7 +31,7 @@ public class userService implements UserDetailsService {
 
         return user;
     }
-
+*/
 
 
     @Transactional
