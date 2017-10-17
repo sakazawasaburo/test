@@ -40,15 +40,7 @@ public class UserController {
             return "signup";
         }
 
-        /*
-        try {
-            request.login(signupForm.getUsername(), signupForm.getPassword());
-        } catch (ServletException e) {
-            e.printStackTrace();
-        }
-
-        return "redirect:/messages";
-        */
     }
+
 
 }
