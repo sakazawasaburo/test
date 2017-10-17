@@ -1,4 +1,4 @@
-package com.example;
+/*package com.example;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -53,21 +53,21 @@ public class User
     private String password;
 
 
-/*
+
     @Column(nullable = false)
     private boolean enabled;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
-*/
 
-    /*
+
+
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Set<Authority> authorities;
-    */
+
 
     // JPA requirement
     protected User() {}
@@ -123,7 +123,7 @@ public class User
     public boolean isCredentialsNonExpired() {
         return true;
     }
-    */
+
 
 
 
@@ -163,7 +163,7 @@ public class User
 
 
 
-/*
+
     @Override
     public boolean isEnabled() {
         return this.enabled;
@@ -172,6 +172,8 @@ public class User
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
-*/
+
 
 }
+
+*/
