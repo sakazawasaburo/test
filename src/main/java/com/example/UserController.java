@@ -39,6 +39,8 @@ public class UserController {
         	e.printStackTrace();
             return "signup";
          }
+
+        return "signup";
     }
 
 
