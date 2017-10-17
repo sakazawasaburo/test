@@ -25,13 +25,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-public class User
-//implements UserDetails
-{
-
-    //private static final long serialVersionUID = 1L;
-
-    //public enum Authority {ROLE_USER, ROLE_ADMIN}
+public class User{
 
 
     @Id
@@ -61,14 +55,6 @@ public class User
     private Date createdAt;
 
 
-
-/*
-    @ElementCollection(fetch = FetchType.EAGER)
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private Set<Authority> authorities;
-*/
-
     // JPA requirement
     protected User() {}
 
@@ -80,53 +66,6 @@ public class User
         //this.enabled = true;
         //this.authorities = EnumSet.of(Authority.ROLE_USER);
     }
-
- /*
-    @PrePersist
-    public void prePersist() {
-        this.createdAt = new Date();
-    }
-
-
-    public boolean isAdmin() {
-        return this.authorities.contains(Authority.ROLE_ADMIN);
-    }
-
-    public void setAdmin(boolean isAdmin) {
-        if (isAdmin) {
-            this.authorities.add(Authority.ROLE_ADMIN);
-        } else {
-            this.authorities.remove(Authority.ROLE_ADMIN);
-        }
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<GrantedAuthority> authorities = new ArrayList<>();
-        for (Authority authority : this.authorities) {
-            authorities.add(new SimpleGrantedAuthority(authority.toString()));
-        }
-        return authorities;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-*/
-
-
-
 
     //@Override
     public String getCustid() {
@@ -163,16 +102,7 @@ public class User
 
 
 
-/*
-    @Override
-    public boolean isEnabled() {
-        return this.enabled;
-    }
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-*/
 
 }
 

@@ -17,21 +17,7 @@ public class userService  {
     private PasswordEncoder passwordEncoder;
 
 
-/*
-    @Override
-    public User loadUserByUsername(String username) throws UsernameNotFoundException {
-        if (username == null || "".equals(username)) {
-            throw new UsernameNotFoundException("Username is empty");
-        }
 
-        User user = repository.findByUsername(username);
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found: " + username);
-        }
-
-        return user;
-    }
-*/
 
 
     @Transactional
