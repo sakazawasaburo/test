@@ -10,13 +10,6 @@ import com.example.User;
 public interface UserRepository extends JpaRepository<User, Long> {
 
 
-	public User findByCustid(String custid);
-
-    public User findByUsername(String username);
-
-    public User findByOrgname(String orgname);
-
-    public User findByPassword(String password);
 
 
 
