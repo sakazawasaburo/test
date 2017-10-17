@@ -1,4 +1,4 @@
-/* package com.example;
+package com.example;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -23,7 +23,7 @@ import javax.persistence.TemporalType;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
+/*
 @Entity
 public class User{
 
