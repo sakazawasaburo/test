@@ -34,13 +34,14 @@ public class UserController {
 
         try {
             userservice.registerUser(signupform.getCustid(),signupform.getUsername(), signupform.getOrgname(),signupform.getPassword());
-        } catch (DataIntegrityViolationException e) {
+        }catch (DataIntegrityViolationException e) {
             //model.addAttribute("signupError", true);
         	e.printStackTrace();
             return "signup";
-        }
-
+         }
     }
+
+
 
 
 }
