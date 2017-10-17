@@ -1,4 +1,4 @@
-/*package com.example;
+/* package com.example;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -80,7 +80,7 @@ public class User
         //this.enabled = true;
         //this.authorities = EnumSet.of(Authority.ROLE_USER);
     }
-
+*/
     /*
     @PrePersist
     public void prePersist() {
