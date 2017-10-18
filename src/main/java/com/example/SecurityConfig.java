@@ -85,7 +85,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	@Bean
-	@primary
 	public DataSource dataSource() throws SQLException {
 		if (dbUrl == null || dbUrl.isEmpty()) {
 			return new HikariDataSource();
