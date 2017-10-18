@@ -10,8 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class userService  {
 
-    //@Autowired
-    //private UserRepository repository;
+    @Autowired
+    private UserRepository repository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
