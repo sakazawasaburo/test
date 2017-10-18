@@ -36,7 +36,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
-@Controller
+import com.example.User;
+import com.example.userService;
+
+
 @SpringBootApplication
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
