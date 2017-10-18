@@ -94,7 +94,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			return new HikariDataSource(config);
 		}
 	}
-	@Bean(name="passwordencorder")
+	@Bean(name = "passwordencorder")
 	public PasswordEncoder passwordEncoder() {
 	    return new BCryptPasswordEncoder();
 	}
