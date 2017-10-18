@@ -66,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.jdbcAuthentication()
 		.dataSource(dataSource)
 		.usersByUsernameQuery(USER_QUERY)
-		.authoritiesByUsernameQuery(ROLE_QUERY)
+		.authoritiesByUsernameQuery(ROLE_QUERY);
 	}
 
 	@Override
