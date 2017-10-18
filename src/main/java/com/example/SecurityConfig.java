@@ -61,9 +61,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth
-		.userDetailsService(userservice)
         .passwordEncoder(passwordEncoder())
-		//.jdbcAuthentication()
+		.jdbcAuthentication()
 		.dataSource(dataSource)
 		.usersByUsernameQuery(USER_QUERY)
 		.authoritiesByUsernameQuery(ROLE_QUERY);
