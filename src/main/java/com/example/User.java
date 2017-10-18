@@ -56,7 +56,7 @@ public class User{
         //this.authorities = EnumSet.of(Authority.ROLE_USER);
     }
 
-    //@Override
+    @Override
     public String getCustid() {
         return custid;
     }
@@ -64,7 +64,7 @@ public class User{
         this.custid = custid;
     }
 
-    //@Override
+    @Override
     public String getUsername() {
         return username;
     }
@@ -72,7 +72,7 @@ public class User{
         this.username = username;
     }
 
-    //@Override
+    @Override
     public String getOrgname() {
         return orgname;
     }
@@ -80,7 +80,7 @@ public class User{
         this.orgname = orgname;
     }
 
-    //@Override
+    @Override
     public String getPassword() {
         return password;
     }

@@ -36,7 +36,7 @@ public class UserController {
             userservice.registerUser(signupform.getCustid(),signupform.getUsername(), signupform.getOrgname(),signupform.getPassword());
         }catch (DataIntegrityViolationException e) {
             //model.addAttribute("signupError", true);
-        	e.printStackTrace();
+        	//e.printStackTrace();
             return "signup";
          }
 

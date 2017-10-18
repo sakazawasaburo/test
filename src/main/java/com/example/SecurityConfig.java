@@ -40,13 +40,16 @@ import com.example.User;
 import com.example.userService;
 
 //@Controller
-@Configuration
+//@Configuration
 @SpringBootApplication
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
+
+	@Autowired
+	private userService userservice;
 
 	@Autowired
 	@Qualifier("dataSource")
@@ -57,7 +60,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.jdbcAuthentication()
+		auth
+		.userDetailsService(userService)
+        .passwordEncoder(passwordEncoder());
+		.jdbcAuthentication()
 		.dataSource(dataSource)
 		.usersByUsernameQuery(USER_QUERY)
 		.authoritiesByUsernameQuery(ROLE_QUERY);
