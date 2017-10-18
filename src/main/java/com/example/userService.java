@@ -13,7 +13,7 @@ public class userService  {
     @Autowired
     private UserRepository repository;
 
-    @Autowired("passwordencorder")
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
 
