@@ -28,12 +28,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class User{
 
 
+
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-
-
     @Column(nullable = false, unique = true)
     private String custid;
 
