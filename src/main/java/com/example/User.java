@@ -28,9 +28,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class User{
 
 
-
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, unique = true)
@@ -45,13 +42,6 @@ public class User{
     @Column(nullable = false)
     private String password;
 
-
-
-    @Column(nullable = false)
-    private boolean enabled;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
 
 
     // JPA requirement
