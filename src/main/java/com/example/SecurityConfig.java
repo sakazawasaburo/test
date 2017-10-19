@@ -48,6 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private String dbUrl;
 
 	@Autowired
+	@Qualifier("userService")
 	private userService userservice;
 
 	@Autowired
