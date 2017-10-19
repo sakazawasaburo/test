@@ -1,4 +1,4 @@
-package com.example;
+/*package com.example;
 
 import lombok.Data;
 import javax.validation.constraints.Pattern;
@@ -20,3 +20,4 @@ public class signupForm{
     private String password;
 
 }
+*/
