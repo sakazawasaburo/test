@@ -33,7 +33,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
-//@Controller
+@Controller
 @SpringBootApplication
 public class Main {
 
