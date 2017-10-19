@@ -92,11 +92,7 @@
 	    <artifactId>spring-jdbc</artifactId>
 	    <version>4.2.3.RELEASE</version>
 		</dependency>
-		<dependency>
-        <groupId>org.hibernate</groupId>
-        <artifactId>hibernate-entitymanager</artifactId>
-        <version>4.3.5.Final</version>
-    	</dependency>
+
     	<dependency>
 	    <groupId>org.hsqldb</groupId>
 	    <artifactId>hsqldb</artifactId>
