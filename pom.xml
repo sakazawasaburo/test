@@ -56,9 +56,16 @@
 	  <version>1.0.2</version>
 	  </dependency>
 	  <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-jpa</artifactId>
-      </dependency>
+	  <groupId>org.hibernate</groupId>
+	  <artifactId>hibernate-entitymanager</artifactId>
+	  <version>4.3.6.Final</version>
+	  <exclusions>
+      <exclusion>
+      <groupId>org.hibernate.javax.persistence</groupId>
+      <artifactId>hibernate-jpa-2.1-api</artifactId>
+	  </exclusion>
+	  </exclusions>
+	  </dependency>
 
 
 		<!-- Spring Jpa -->
