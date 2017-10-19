@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Component;
 
 import com.example.UserRepository;
+import com.example.User;
 
 @Service
 @Component

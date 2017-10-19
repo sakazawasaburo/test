@@ -47,8 +47,10 @@ public class Main {
 		SpringApplication.run(Main.class, args);
 	}
 
-	//@Autowired
+	@Autowired
 	private userService userservice;
+
+
 
 	@GetMapping("/signup")
 	    public String signup(Model model) {
@@ -84,11 +86,11 @@ public class Main {
 		return "Home";
 	}
 
-	/*@RequestMapping("/signup")
+	@RequestMapping("/signup")
 	String signup() {
 		return "signup";
 	}
-	*/
+
 
 
 	@RequestMapping("/Account")
