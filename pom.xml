@@ -198,6 +198,21 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+		<repository>
+			<id>com.springsource.repository.bundle.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
+		<repository>
+			<id>com.springsource.repository.bundle.milestone</id>
+		    <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Milestones</name>
+			<url>http://repository.springsource.com/maven/bundles/milestone</url>
+		</repository>
+		<repository>
+		    <id>com.springsource.repository.libraries.milestone</id>
+		    <name>SpringSource Enterprise Bundle Repository - Milestone Library Releases</name>
+		    <url>http://repository.springsource.com/maven/libraries/milestone</url>
+		</repository>
 
 	</repositories>
 
