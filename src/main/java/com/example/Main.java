@@ -48,7 +48,6 @@ public class Main {
 	}
 
 	@Autowired
-	@Qualifier("userService")
 	private userService userservice;
 
 	@GetMapping("/signup")
