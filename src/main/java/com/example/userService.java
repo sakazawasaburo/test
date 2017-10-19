@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class userService  {
 
-    @Autowired
+    //@Autowired
     private UserRepository repository;
 
     @Autowired
