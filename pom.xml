@@ -50,15 +50,6 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- Spring Jpa -->
-
-
-
-
-
-
-
-
-
 		<!-- Spring Jpa -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
