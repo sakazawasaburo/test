@@ -57,7 +57,9 @@ public class Main {
 	    }
 
 	@PostMapping("/signup")
-	    public String signupPost(Model model, @Valid signupForm signupform, BindingResult bindingResult, HttpServletRequest request) {
+	    public String signupPost(Model model,
+	    		//@Valid signupForm signupform,
+	    		BindingResult bindingResult, HttpServletRequest request) {
 	        if (bindingResult.hasErrors()) {
 	            return "signup";
 	        }
