@@ -46,9 +46,9 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(Main.class, args);
 	}
-
+/*
 	//@Autowired
-	//private userService userservice;
+	private userService userservice;
 
 	@GetMapping("/signup")
 	    public String signup(Model model) {
@@ -57,9 +57,7 @@ public class Main {
 	    }
 
 	@PostMapping("/signup")
-	    public String signupPost(Model model,
-	    		//@Valid signupForm signupform,
-	    		BindingResult bindingResult, HttpServletRequest request) {
+	    public String signupPost(Model model,@Valid signupForm signupform,BindingResult bindingResult, HttpServletRequest request) {
 	        if (bindingResult.hasErrors()) {
 	            return "signup";
 	        }
@@ -74,7 +72,7 @@ public class Main {
 
 	        return "signup";
 	    }
-
+*/
 
 	@RequestMapping({"/","/login"})
 	String login() {
