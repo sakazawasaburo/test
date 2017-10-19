@@ -47,8 +47,8 @@ public class Main {
 		SpringApplication.run(Main.class, args);
 	}
 
-	@Autowired
-	private userService userservice;
+	//@Autowired
+	//private userService userservice;
 
 	@GetMapping("/signup")
 	    public String signup(Model model) {
