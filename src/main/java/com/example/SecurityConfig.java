@@ -39,7 +39,7 @@ import java.util.Map;
 import com.example.User;
 import com.example.userService;
 
-@Controller
+@Configuration
 @SpringBootApplication
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
