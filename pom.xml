@@ -174,7 +174,6 @@
 		    <name>SpringSource Enterprise Bundle Repository - Milestone Library Releases</name>
 		    <url>http://repository.springsource.com/maven/libraries/milestone</url>
 		</repository>
-
 	</repositories>
 
 
@@ -203,4 +202,3 @@
 	</build>
 
 </project>
-</dependencies>
