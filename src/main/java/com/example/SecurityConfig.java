@@ -50,8 +50,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	//@Autowired
 	private userService userservice;
 
-	@Autowired
-	@Qualifier("dataSource")
+	//@Autowired
+	//@Qualifier("dataSource")
 	private DataSource dataSource;
 
 	private static final String USER_QUERY = "SELECT custid, password,role FROM userdata WHERE custid = ?";
