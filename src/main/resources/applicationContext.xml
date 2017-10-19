@@ -1,0 +1,24 @@
+<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <beans:property name="driverClassName" value="${jdbc.driverClassName}" />
+        <beans:property name="url" value="${jdbc.url}" />
+        <beans:property name="username" value="${jdbc.username}" />
+        <beans:property name="password" value="${jdbc.password}" />
+    </beans:bean>
+
+    <beans:bean id="jpaDialect" class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
+
+    <beans:bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+        <beans:property name="database" value="ORACLE" />
+        <beans:property name="databasePlatform" value="org.hibernate.dialect.Oracle10gDialect" />
+    </beans:bean>
+
+    <beans:bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <beans:property name="packagesToScan" value="jp.test.spring.entity" />
+        <beans:property name="dataSource" ref="dataSource" />
+        <beans:property name="jpaDialect" ref="jpaDialect" />
+        <beans:property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
+    </beans:bean>
+
+    <beans:bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <beans:property name="entityManagerFactory" ref="entityManagerFactory" />
+    </beans:bean>
