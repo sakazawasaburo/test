@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.example.User;
 
 
+
 @Repository
 @EnableJpaRepositories
 public interface UserRepository extends JpaRepository<User, String> {
