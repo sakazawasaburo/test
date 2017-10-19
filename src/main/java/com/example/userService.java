@@ -13,22 +13,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class userService  {
 
-    //@Autowired
+    @Autowired
     private UserRepository repository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
 
 
-
-
-
-    @Transactional
-    public void registerAdmin(String custid,String username, String orgname,String password) {
-        User user = new User(custid,username,orgname, passwordEncoder.encode(password));
-        //user.setAdmin(true);
-        repository.save(user);
-    }
 
     @Transactional
     public void registerUser(String custid,String username,String orgname,String password) {
