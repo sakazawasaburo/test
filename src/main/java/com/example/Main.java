@@ -48,7 +48,8 @@ public class Main {
 	}
 
 	@Autowired
-	   userService userservice;
+	@Qualifier("userService")
+	private userService userservice;
 
 	@GetMapping("/signup")
 	    public String signup(Model model) {
