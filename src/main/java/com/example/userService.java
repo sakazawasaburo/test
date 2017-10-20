@@ -48,7 +48,7 @@ import org.springframework.ui.Model;
 import com.example.User;
 import com.example.signupForm;
 
-@Service
+@Controller
 @Component
 public class userService{
 
@@ -61,6 +61,30 @@ public class userService{
     @Autowired
 	@Qualifier("dataSource")
 	private DataSource dataSource;
+
+
+    @GetMapping("/signup")
+    public String signup(Model model) {
+        model.addAttribute("signupform", new signupForm());
+        return "signup";
+    }
+
+    @PostMapping("/signup")
+    public String signupPost(Model model,@Valid signupForm signupform,BindingResult bindingResult, HttpServletRequest request) {
+        if (bindingResult.hasErrors()) {
+            return "signup";
+        }
+
+        try {
+            //userservice.registerUser(signupform.getCustid(),signupform.getUsername(), signupform.getOrgname(),signupform.getPassword());
+        }catch (DataIntegrityViolationException e) {
+            //model.addAttribute("signupError", true);
+        	//e.printStackTrace();
+            return "signup";
+         }
+
+        return "signup";
+    }
 
 
 

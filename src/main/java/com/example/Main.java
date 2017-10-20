@@ -47,6 +47,7 @@ public class Main {
 		SpringApplication.run(Main.class, args);
 	}
 
+	/*
 	@Autowired
 	private userService userservice;
 
@@ -74,6 +75,7 @@ public class Main {
 
 	        return "signup";
 	    }
+	 */
 
 
 	@RequestMapping({"/","/login"})
