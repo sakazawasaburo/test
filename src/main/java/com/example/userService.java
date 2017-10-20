@@ -103,7 +103,7 @@ public class userService{
     //public void registerUser(String custid,String username,String orgname,String password) {
         //User user = new User(custid,username, orgname, passwordEncoder.encode(password));
         //repository.save(user);
-    @RequestMapping("/signup")
+    @RequestMapping("/db")
         String db(Map<String, Object> model){
 	        try (Connection connection = dataSource.getConnection()) {
 	  	      Statement stmt = connection.createStatement();

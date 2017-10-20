@@ -100,9 +100,9 @@ public class Main {
 		return "Account";
 	}
 
-	@RequestMapping("/index")
+	@RequestMapping("/db")
 	String index() {
-		return "index";
+		return "db";
 	}
 
 	@RequestMapping("/logview")
