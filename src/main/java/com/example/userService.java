@@ -60,12 +60,18 @@ public class userService{
     //@Autowired
     //private UserRepository repository;
 
+
+	@Value("${spring.datasource.url}")
+	private String dbUrl;
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Autowired
 	@Qualifier("dataSource")
 	private DataSource dataSource;
+
+
 
 
     @GetMapping("/signup")
