@@ -18,15 +18,15 @@ public class userService  {
     @Autowired
     private UserRepository repository;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    //@Autowired
+    //private PasswordEncoder passwordEncoder;
 
 
 
     @Transactional
     public void registerUser(String custid,String username,String orgname,String password) {
         User user = new User(custid,username, orgname, passwordEncoder.encode(password));
-        repository.save(user);
+        //repository.save(user);
     }
 
 }
