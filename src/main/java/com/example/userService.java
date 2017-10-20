@@ -21,7 +21,7 @@ import com.example.User;
 
 @Service
 @Component
-public class userService  {
+public class userService{
 
     //@Autowired
     //private UserRepository repository;
@@ -53,7 +53,7 @@ public class userService  {
 	  	      model.put("message", e.getMessage());
 	  	      return "error";
 	  	    }
-        }
+
 
     }
 
