@@ -15,11 +15,11 @@ import com.example.User;
 @Component
 public class userService  {
 
-    @Autowired
-    private UserRepository repository;
-
     //@Autowired
-    //private PasswordEncoder passwordEncoder;
+    //private UserRepository repository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
 
 
