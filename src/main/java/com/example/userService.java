@@ -46,6 +46,7 @@ import org.springframework.ui.Model;
 
 //import com.example.UserRepository;
 import com.example.User;
+import com.example.signupForm;
 
 @Service
 @Component
@@ -73,7 +74,7 @@ public class userService{
 	        try (Connection connection = dataSource.getConnection()) {
 	  	      Statement stmt = connection.createStatement();
 	  	      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-	  	      stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
+	  	      stmt.executeUpdate("INSERT INTO ticks VALUES (signupform.getCustid(),signupform.getUsername(), signupform.getOrgname(),signupform.getPassword())");
 	  	      ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
 
 	  	      ArrayList<String> output = new ArrayList<String>();
