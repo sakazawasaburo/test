@@ -94,7 +94,6 @@ public class Main {
 	}
 
 
-
 	@RequestMapping("/Account")
 	String Account() {
 		return "Account";
