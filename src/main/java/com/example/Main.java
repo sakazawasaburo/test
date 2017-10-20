@@ -88,10 +88,11 @@ public class Main {
 		return "Home";
 	}
 
-	@RequestMapping("/signup")
+	/*@RequestMapping("/signup")
 	String signup() {
 		return "signup";
 	}
+	*/
 
 
 	@RequestMapping("/Account")
