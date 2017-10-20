@@ -29,13 +29,17 @@ public class userService{
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+	@Qualifier("dataSource")
+	private DataSource dataSource;
+
 
 
     @Transactional
     public void registerUser(String custid,String username,String orgname,String password) {
-        User user = new User(custid,username, orgname, passwordEncoder.encode(password));
+        //User user = new User(custid,username, orgname, passwordEncoder.encode(password));
         //repository.save(user);
-        //String db(Map<String, Object> model){
+        String db(Map<String, Object> model){
 	        try (Connection connection = dataSource.getConnection()) {
 	  	      Statement stmt = connection.createStatement();
 	  	      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
@@ -54,7 +58,20 @@ public class userService{
 	  	      return "error";
 	  	    }
 
+        }
 
     }
+
+
+        @Bean
+    	public DataSource dataSource() throws SQLException {
+    		if (dbUrl == null || dbUrl.isEmpty()) {
+    			return new HikariDataSource();
+    		} else {
+    			HikariConfig config = new HikariConfig();
+    			config.setJdbcUrl(dbUrl);
+    			return new HikariDataSource(config);
+    		}
+    	}
 
 }
