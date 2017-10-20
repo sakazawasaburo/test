@@ -65,7 +65,7 @@ public class Main {
 	        }
 
 	        try {
-	            //userservice.registerUser(signupform.getCustid(),signupform.getUsername(), signupform.getOrgname(),signupform.getPassword());
+	            userservice.registerUser(signupform.getCustid(),signupform.getUsername(), signupform.getOrgname(),signupform.getPassword());
 	        }catch (DataIntegrityViolationException e) {
 	            //model.addAttribute("signupError", true);
 	        	//e.printStackTrace();

@@ -68,6 +68,7 @@ public class userService{
         //User user = new User(custid,username, orgname, passwordEncoder.encode(password));
         //repository.save(user);
     @RequestMapping("/db")
+    public void registerUser(String custid,String username,String orgname,String password) {
         String db(Map<String, Object> model){
 	        try (Connection connection = dataSource.getConnection()) {
 	  	      Statement stmt = connection.createStatement();
@@ -90,7 +91,7 @@ public class userService{
         }
 
 
-
+    }
 
         /*@Bean
     	public DataSource dataSource() throws SQLException {
