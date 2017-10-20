@@ -123,7 +123,7 @@ public class userService{
 
 
 
-        /*@Bean
+        @Bean
     	public DataSource dataSource() throws SQLException {
     		if (dbUrl == null || dbUrl.isEmpty()) {
     			return new HikariDataSource();
@@ -133,6 +133,6 @@ public class userService{
     			return new HikariDataSource(config);
     		}
     	}
-    	*/
+
 
 }
