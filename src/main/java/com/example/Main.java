@@ -51,7 +51,7 @@ public class Main {
 	@Autowired
 	private userService userservice;
 
-
+/*
 
 	@GetMapping("/signup")
 	    public String signup(Model model) {
@@ -75,7 +75,7 @@ public class Main {
 
 	        return "signup";
 	    }
-
+*/
 
 
 	@RequestMapping({"/","/login"})
