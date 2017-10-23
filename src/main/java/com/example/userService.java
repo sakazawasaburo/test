@@ -65,8 +65,8 @@ public class userService{
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
 
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+	//@Autowired
+	//private PasswordEncoder passwordEncoder;
 
 	@Autowired
 	@Qualifier("dataSource")
