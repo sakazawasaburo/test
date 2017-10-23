@@ -80,7 +80,7 @@ public class Main {
 			ResultSet rs = stmt.executeQuery("SELECT orgname FROM userdata");
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
-				output.add("Read from DB: "+ rs.getTimestamp("orgname"));
+				output.add("Read from DB: "+ rs.getString("orgname"));
 			}
 			model.put("records", output);
 			return "db";
