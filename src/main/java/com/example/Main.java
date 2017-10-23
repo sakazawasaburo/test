@@ -77,6 +77,13 @@ public class Main {
 	    }
 	 */
 
+	@Value("${spring.datasource.url}")
+	private String dbUrl;
+
+	@Autowired
+	@Qualifier("dataSource")
+	private DataSource dataSource;
+
 
 	@RequestMapping({"/","/login"})
 	String login() {
