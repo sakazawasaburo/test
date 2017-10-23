@@ -49,9 +49,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
 
-	@Autowired
+	/*@Autowired
 	private userService userservice;
-
+*/
 	@Autowired
 	@Qualifier("dataSource")
 	private DataSource dataSource;
