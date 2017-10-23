@@ -126,7 +126,8 @@ public class userService{
 				model.put("message", e.getMessage());
 				return "error";
 			}
-
+		}catch(Exception e){
+			e.printStackTrace();
 		}
 	}
 
