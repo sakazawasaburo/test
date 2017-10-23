@@ -96,10 +96,11 @@ public class Main {
 		return "Account";
 	}
 
-	@RequestMapping("/db")
+	/*@RequestMapping("/db")
 	String index() {
 		return "db";
 	}
+	*/
 
 	@RequestMapping("/logview")
 	String logview() {
