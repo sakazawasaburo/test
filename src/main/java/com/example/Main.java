@@ -71,7 +71,7 @@ public class Main {
 		return "signup";
 	}
 	 */
-
+/*
 	@RequestMapping("/db")
 	String db(Map<String, Object> model){
 		try (Connection connection = dataSource.getConnection()) {
@@ -93,7 +93,7 @@ public class Main {
 
 		}
 	}
-
+*/
 
 	@RequestMapping("/Account")
 	String Account() {
