@@ -1,4 +1,4 @@
-package com.example;
+/*package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.core.userdetails.UserDetailsService;
@@ -72,7 +72,7 @@ public class userService{
 	@Qualifier("dataSource")
 	private DataSource dataSource;
 
-
+*/
 
 	/*
 	@GetMapping("/signup")
@@ -100,7 +100,7 @@ public class userService{
 
 }
 	 */
-
+/*
 	//@Transactional
 	//public void registerUser(String custid,String username,String orgname,String password) {
 	//User user = new User(custid,username, orgname, passwordEncoder.encode(password));
@@ -142,4 +142,4 @@ public class userService{
 
 
 }
-
+*/
