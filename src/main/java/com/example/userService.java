@@ -75,7 +75,7 @@ public class userService{
 
 
 
-
+/*
     @GetMapping("/signup")
     public String signup(Model model) {
         model.addAttribute("signupform", new signupForm());
@@ -98,7 +98,7 @@ public class userService{
 
         return "signup";
     }
-
+*/
 
 
     //@Transactional
