@@ -77,7 +77,7 @@ public class Main {
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("INSERT INTO userdata VALUES (1234567,すいか太郎,行政システム ,password,1,ADMIN)");
-			/*ResultSet rs = stmt.executeQuery("SELECT orgname FROM userdata");
+			/*ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
 
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
