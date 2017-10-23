@@ -77,10 +77,10 @@ public class Main {
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
 			//stmt.executeUpdate("INSERT INTO userdata VALUES (signupform.getCustid(),signupform.getCustname(), signupform.getOrgname(),signupform.getPassword(),signupform.getRole(),signupform.getReserve())");
-			ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
+			ResultSet rs = stmt.executeQuery("SELECT custname FROM userdata");
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
-				output.add("Read from DB: "+ rs.getTimestamp("custid"));
+				output.add("Read from DB: "+ rs.getTimestamp("custname"));
 			}
 			model.put("records", output);
 			return "db";
