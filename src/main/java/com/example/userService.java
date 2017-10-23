@@ -75,73 +75,72 @@ public class userService{
 
 
 
-    @GetMapping("/signup")
-    public String signup(Model model) {
-        model.addAttribute("signupform", new signupForm());
-        return "signup";
-    }
+	@GetMapping("/signup")
+	public String signup(Model model) {
+		model.addAttribute("signupform", new signupForm());
+		return "signup";
+	}
 
-    @PostMapping("/signup")
-    public String signupPost(Model model,@Valid signupForm signupform,BindingResult bindingResult, HttpServletRequest request) {
-        if (bindingResult.hasErrors()) {
-            return "signup";
-        }
+	@PostMapping("/signup")
+	public String signupPost(Model model,@Valid signupForm signupform,BindingResult bindingResult, HttpServletRequest request) {
+		if (bindingResult.hasErrors()) {
+			return "signup";
+		}
 
-        try {
-            //userservice.registerUser(signupform.getCustid(),signupform.getUsername(), signupform.getOrgname(),signupform.getPassword());
-        }catch (DataIntegrityViolationException e) {
-            //model.addAttribute("signupError", true);
-        	//e.printStackTrace();
-            return "signup";
-         }
+		try {
+			//userservice.registerUser(signupform.getCustid(),signupform.getUsername(), signupform.getOrgname(),signupform.getPassword());
+		}catch (DataIntegrityViolationException e) {
+			//model.addAttribute("signupError", true);
+			//e.printStackTrace();
+			return "signup";
+		}
 
-        return "signup";
-    }
+		return "signup";
+	}
 
 }
 
-	//@Transactional
-	//public void registerUser(String custid,String username,String orgname,String password) {
-	//User user = new User(custid,username, orgname, passwordEncoder.encode(password));
-	//repository.save(user);
-	@RequestMapping("/db")
-	//String db(Map<String, Object> model){
-		try (Connection connection = dataSource.getConnection()) {
-			Statement stmt = connection.createStatement();
-			//stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-			//stmt.executeUpdate("INSERT INTO userdata VALUES (signupform.getCustid(),signupform.getCustname(), signupform.getOrgname(),signupform.getPassword(),signupform.getRole(),signupform.getReserve())");
-			ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
-			ArrayList<String> output = new ArrayList<String>();
-			while (rs.next()) {
-	  	        output.add("Read from DB: "
-	  	      //+ rs.getTimestamp("tick"));
-	  	      }
+//@Transactional
+//public void registerUser(String custid,String username,String orgname,String password) {
+//User user = new User(custid,username, orgname, passwordEncoder.encode(password));
+//repository.save(user);
+@RequestMapping("/db")
+String db(Map<String, Object> model){
+	try (Connection connection = dataSource.getConnection()) {
+		Statement stmt = connection.createStatement();
+		//stmt.executeUpdate("INSERT INTO userdata VALUES (signupform.getCustid(),signupform.getCustname(), signupform.getOrgname(),signupform.getPassword(),signupform.getRole(),signupform.getReserve())");
+		ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
 
-			try{
-				model.put("records", output);
-				return "db";
-			} catch (Exception e) {
-				model.put("message", e.getMessage());
-				return "db";
-			}
-		}catch(Exception e){
-			e.printStackTrace();
-			return "db";
+		ArrayList<String> output = new ArrayList<String>();
+		while (rs.next()) {
+			output.add("Read from DB: "
+					//+ rs.getTimestamp("tick"));
 		}
+
+		model.put("records", output);
+		return "db";
+	} catch (Exception e) {
+		model.put("message", e.getMessage());
+		return "db";
 	}
+}catch(Exception e){
+	e.printStackTrace();
+	return "error";
+
+}
 
 
-	@Bean
-	@ConfigurationProperties("spring.datasource")
-	public DataSource dataSource() throws SQLException {
-		if (dbUrl == null || dbUrl.isEmpty()) {
-			return new HikariDataSource();
-		} else {
-			HikariConfig config = new HikariConfig();
-			config.setJdbcUrl(dbUrl);
-			return new HikariDataSource(config);
-		}
+@Bean
+@ConfigurationProperties("spring.datasource")
+public DataSource dataSource() throws SQLException {
+	if (dbUrl == null || dbUrl.isEmpty()) {
+		return new HikariDataSource();
+	} else {
+		HikariConfig config = new HikariConfig();
+		config.setJdbcUrl(dbUrl);
+		return new HikariDataSource(config);
 	}
+}
 
 
 
