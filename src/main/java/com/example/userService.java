@@ -114,11 +114,12 @@ public class userService{
 	  	      ResultSet rs = stmt.executeQuery("SELECT * FROM userdata");
 
 	  	      ArrayList<String> output = new ArrayList<String>();
-	  	      while (rs.next()) {
+	  	      /*while (rs.next()) {
 	  	        output.add("Read from DB: "
 	  	      //+ rs.getTimestamp("tick"));
 	  	      }
-
+	  	      */
+	  	      try{
 	  	      model.put("records", output);
 	  	      return "db";
 
@@ -133,7 +134,7 @@ public class userService{
 
 
         @Bean
-        //@ConfigurationProperties("spring.datasource")
+        @ConfigurationProperties("spring.datasource")
     	public DataSource dataSource() throws SQLException {
     		if (dbUrl == null || dbUrl.isEmpty()) {
     			return new HikariDataSource();
