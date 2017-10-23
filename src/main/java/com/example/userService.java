@@ -56,6 +56,7 @@ import com.example.signupForm;
 
 @Controller
 @Component
+@SpringBootApplication
 public class userService{
 
     //@Autowired
