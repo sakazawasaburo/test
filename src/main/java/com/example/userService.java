@@ -91,9 +91,8 @@ public class userService{
             //userservice.registerUser(signupform.getCustid(),signupform.getUsername(), signupform.getOrgname(),signupform.getPassword());
         }catch (DataIntegrityViolationException e) {
             //model.addAttribute("signupError", true);
-        	//e.printStackTrace();
-            return "signup";
-         }
+        	e.printStackTrace();
+        }
 
         return "signup";
     }
