@@ -1,4 +1,4 @@
-package com.example;
+/*package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.core.userdetails.UserDetailsService;
@@ -99,13 +99,13 @@ public class userService{
         return "signup";
     }
 
-
+*/
 
 	//@Transactional
 	//public void registerUser(String custid,String username,String orgname,String password) {
 	//User user = new User(custid,username, orgname, passwordEncoder.encode(password));
 	//repository.save(user);
-	@RequestMapping("/db")
+/*	@RequestMapping("/db")
 	String db(Map<String, Object> model){
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
@@ -119,7 +119,7 @@ public class userService{
 	  	      //+ rs.getTimestamp("tick"));
 	  	      }
 			 */
-			try{
+		/*	try{
 				model.put("records", output);
 				return "db";
 			} catch (Exception e) {
@@ -148,3 +148,4 @@ public class userService{
 
 
 }
+*/
