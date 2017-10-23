@@ -48,8 +48,8 @@ public class Main {
 	}
 
 
-	@Autowired
-	private userService userservice;
+	//@Autowired
+	//private userService userservice;
 
 /*
 
