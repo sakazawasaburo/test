@@ -104,14 +104,13 @@ public class userService{
 	//public void registerUser(String custid,String username,String orgname,String password) {
 	//User user = new User(custid,username, orgname, passwordEncoder.encode(password));
 	//repository.save(user);
-	@RequestMapping("/signup")
+	@RequestMapping("/db")
 	//String db(Map<String, Object> model){
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
 			//stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-			stmt.executeUpdate("INSERT INTO userdata VALUES (signupform.getCustid(),signupform.getCustname(), signupform.getOrgname(),signupform.getPassword(),signupform.getRole(),signupform.getReserve())");
-			//ResultSet rs = stmt.executeQuery("SELECT * FROM userdata");
-			/*
+			//stmt.executeUpdate("INSERT INTO userdata VALUES (signupform.getCustid(),signupform.getCustname(), signupform.getOrgname(),signupform.getPassword(),signupform.getRole(),signupform.getReserve())");
+			ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
 	  	        output.add("Read from DB: "
@@ -120,15 +119,14 @@ public class userService{
 
 			try{
 				model.put("records", output);
-				return "signup";
+				return "db";
 			} catch (Exception e) {
 				model.put("message", e.getMessage());
-				return "signup";
+				return "db";
 			}
-			*/
 		}catch(Exception e){
 			e.printStackTrace();
-			return "signup";
+			return "db";
 		}
 	}
 
