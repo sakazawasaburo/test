@@ -128,8 +128,9 @@ public class userService{
 
 
 
-    	/*
+
         @Bean
+        @ConfigurationProperties("spring.datasource")
     	public DataSource dataSource() throws SQLException {
     		if (dbUrl == null || dbUrl.isEmpty()) {
     			return new HikariDataSource();
@@ -139,7 +140,7 @@ public class userService{
     			return new HikariDataSource(config);
     		}
     	}
-    	*/
+
 
 
 }
