@@ -1,4 +1,4 @@
-/*package com.example;
+package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,7 +18,6 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -46,7 +45,7 @@ import org.springframework.validation.BindingResult;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.ui.Model;
+
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -99,7 +98,7 @@ public class userService{
         return "signup";
     }
 
-*/
+
 
 	//@Transactional
 	//public void registerUser(String custid,String username,String orgname,String password) {
