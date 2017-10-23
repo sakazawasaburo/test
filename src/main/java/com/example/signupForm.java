@@ -11,7 +11,7 @@ public class signupForm{
     private String custid;
 
 	@Size(min=3, max=32)
-    private String username;
+    private String custname;
 
 	@Size(min=8, max=255)
     private String orgname;

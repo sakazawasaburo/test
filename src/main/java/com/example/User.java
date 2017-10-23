@@ -34,7 +34,7 @@ public class User{
     private String custid;
 
     @Column(nullable = false, unique = true)
-    private String username;
+    private String custname;
 
     @Column(nullable = false, unique = true)
     private String orgname;
@@ -47,9 +47,9 @@ public class User{
     // JPA requirement
     protected User() {}
 
-    public User(String custid, String username, String orgname,  String password ) {
+    public User(String custid, String custname, String orgname,  String password ) {
     	this.custid = custid;
-    	this.username = username;
+    	this.custname = custname;
     	this.orgname = orgname;
         this.password = password;
         //this.enabled = true;
@@ -65,11 +65,11 @@ public class User{
     }
 
     //@Override
-    public String getUsername() {
-        return username;
+    public String getCustname() {
+        return custname;
     }
-    public void setUsername(String username) {
-        this.username = username;
+    public void setCustname(String custname) {
+        this.custname = custname;
     }
 
     //@Override
