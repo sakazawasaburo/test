@@ -76,13 +76,16 @@ public class Main {
 	String db(Map<String, Object> model){
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
-			//stmt.executeUpdate("INSERT INTO userdata VALUES (signupform.getCustid(),signupform.getCustname(), signupform.getOrgname(),signupform.getPassword(),signupform.getRole(),signupform.getReserve())");
-			ResultSet rs = stmt.executeQuery("SELECT orgname FROM userdata");
+			stmt.executeUpdate("INSERT INTO userdata VALUES (1234567,すいか太郎,行政システム ,password,1,ADMIN)");
+			/*ResultSet rs = stmt.executeQuery("SELECT orgname FROM userdata");
+
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
 				output.add("Read from DB: "+ rs.getString("orgname"));
 			}
-			model.put("records", output);
+
+			model.put("records", output);*/
+
 			return "db";
 		} catch (Exception e) {
 			model.put("message", e.getMessage());
