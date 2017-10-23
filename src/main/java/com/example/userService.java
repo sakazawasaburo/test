@@ -45,7 +45,7 @@ import org.springframework.validation.BindingResult;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.dao.DataIntegrityViolationException;
-
+import org.springframework.ui.Model;
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -91,13 +91,14 @@ public class userService{
             //userservice.registerUser(signupform.getCustid(),signupform.getUsername(), signupform.getOrgname(),signupform.getPassword());
         }catch (DataIntegrityViolationException e) {
             //model.addAttribute("signupError", true);
-        	e.printStackTrace();
-        }
+        	//e.printStackTrace();
+            return "signup";
+         }
 
-        return "signup";
+        //return "signup";
     }
 
-
+}
 
 	//@Transactional
 	//public void registerUser(String custid,String username,String orgname,String password) {
