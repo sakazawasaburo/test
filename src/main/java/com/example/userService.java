@@ -104,7 +104,7 @@ public class userService{
 	//public void registerUser(String custid,String username,String orgname,String password) {
 	//User user = new User(custid,username, orgname, passwordEncoder.encode(password));
 	//repository.save(user);
-	@RequestMapping("/db")
+	@RequestMapping("/signup")
 	String db(Map<String, Object> model){
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
@@ -120,18 +120,18 @@ public class userService{
 
 			try{
 				model.put("records", output);
-				return "db";
+				return "signup";
 			} catch (Exception e) {
 				model.put("message", e.getMessage());
-				return "error";
+				return "signup";
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			return "db";
+			return "signup";
 		}
 	}
 
-/*
+
 	@Bean
 	@ConfigurationProperties("spring.datasource")
 	public DataSource dataSource() throws SQLException {
@@ -143,7 +143,7 @@ public class userService{
 			return new HikariDataSource(config);
 		}
 	}
-*/
+
 
 
 }
