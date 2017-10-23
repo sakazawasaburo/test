@@ -104,7 +104,7 @@ public class userService{
 	//public void registerUser(String custid,String username,String orgname,String password) {
 	//User user = new User(custid,username, orgname, passwordEncoder.encode(password));
 	//repository.save(user);
-/*	@RequestMapping("/db")
+	@RequestMapping("/db")
 	String db(Map<String, Object> model){
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
@@ -113,12 +113,12 @@ public class userService{
 			ResultSet rs = stmt.executeQuery("SELECT * FROM userdata");
 
 			ArrayList<String> output = new ArrayList<String>();
-			/*while (rs.next()) {
+			while (rs.next()) {
 	  	        output.add("Read from DB: "
 	  	      //+ rs.getTimestamp("tick"));
 	  	      }
-			 */
-		/*	try{
+
+			try{
 				model.put("records", output);
 				return "db";
 			} catch (Exception e) {
@@ -130,8 +130,8 @@ public class userService{
 			return "db";
 		}
 	}
-*/
 
+/*
 	@Bean
 	@ConfigurationProperties("spring.datasource")
 	public DataSource dataSource() throws SQLException {
@@ -143,7 +143,7 @@ public class userService{
 			return new HikariDataSource(config);
 		}
 	}
-
+*/
 
 
 }
