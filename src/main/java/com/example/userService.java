@@ -59,23 +59,23 @@ import com.example.signupForm;
 @SpringBootApplication
 public class userService{
 
-    //@Autowired
-    //private UserRepository repository;
+	//@Autowired
+	//private UserRepository repository;
 
 
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
-    @Autowired
+	@Autowired
 	@Qualifier("dataSource")
 	private DataSource dataSource;
 
 
 
-/*
+	/*
     @GetMapping("/signup")
     public String signup(Model model) {
         model.addAttribute("signupform", new signupForm());
@@ -98,50 +98,50 @@ public class userService{
 
         return "signup";
     }
-*/
+	 */
 
 
-    //@Transactional
-    //public void registerUser(String custid,String username,String orgname,String password) {
-        //User user = new User(custid,username, orgname, passwordEncoder.encode(password));
-        //repository.save(user);
-    @RequestMapping("/db")
-        String db(Map<String, Object> model){
-	        try (Connection connection = dataSource.getConnection()) {
-	  	      Statement stmt = connection.createStatement();
-	  	      //stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-	  	      stmt.executeUpdate("INSERT INTO userdata VALUES (signupform.getCustid(),signupform.getCustname(), signupform.getOrgname(),signupform.getPassword(),signupform.getRole(),signupform.getReserve())");
-	  	      ResultSet rs = stmt.executeQuery("SELECT * FROM userdata");
+	//@Transactional
+	//public void registerUser(String custid,String username,String orgname,String password) {
+	//User user = new User(custid,username, orgname, passwordEncoder.encode(password));
+	//repository.save(user);
+	@RequestMapping("/db")
+	String db(Map<String, Object> model){
+		try (Connection connection = dataSource.getConnection()) {
+			Statement stmt = connection.createStatement();
+			//stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
+			stmt.executeUpdate("INSERT INTO userdata VALUES (signupform.getCustid(),signupform.getCustname(), signupform.getOrgname(),signupform.getPassword(),signupform.getRole(),signupform.getReserve())");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM userdata");
 
-	  	      ArrayList<String> output = new ArrayList<String>();
-	  	      /*while (rs.next()) {
+			ArrayList<String> output = new ArrayList<String>();
+			/*while (rs.next()) {
 	  	        output.add("Read from DB: "
 	  	      //+ rs.getTimestamp("tick"));
 	  	      }
-	  	      */
-	  	      try{
-	  	      model.put("records", output);
-	  	      return "db";
-	  	    } catch (Exception e) {
-	  	      model.put("message", e.getMessage());
-	  	      return "error";
-	  	    }
+			 */
+			try{
+				model.put("records", output);
+				return "db";
+			} catch (Exception e) {
+				model.put("message", e.getMessage());
+				return "error";
+			}
 
-        }
+		}
+	}
 
 
-
-        @Bean
-    	@ConfigurationProperties("spring.datasource")
-    	public DataSource dataSource() throws SQLException {
-    		if (dbUrl == null || dbUrl.isEmpty()) {
-    			return new HikariDataSource();
-    		} else {
-    			HikariConfig config = new HikariConfig();
-    			config.setJdbcUrl(dbUrl);
-    			return new HikariDataSource(config);
-    		}
-    	}
+	@Bean
+	@ConfigurationProperties("spring.datasource")
+	public DataSource dataSource() throws SQLException {
+		if (dbUrl == null || dbUrl.isEmpty()) {
+			return new HikariDataSource();
+		} else {
+			HikariConfig config = new HikariConfig();
+			config.setJdbcUrl(dbUrl);
+			return new HikariDataSource(config);
+		}
+	}
 
 
 
