@@ -78,7 +78,7 @@ public class Main {
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("INSERT INTO userdata (custid, custname,orgname,password,role,reserve) VALUES ("1234567","すいか太郎","行政システム" ,"password","1","ADMIN")");
 			/*ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
-			//$sql = "INSERT INTO botlog (userid, contents, return) VALUES ('$userID', '$text', '$mes')";
+			$sql = "INSERT INTO botlog (userid, contents, return) VALUES ('$userID', '$text', '$mes')";
 
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
