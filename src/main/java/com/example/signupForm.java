@@ -19,4 +19,10 @@ public class signupForm{
 	@Size(min=8, max=255)
     private String password;
 
+	@Size(min=1, max=8)
+    private String role;
+
+	@Size(min=1, max=8)
+    private String reserve;
+
 }

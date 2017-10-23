@@ -42,16 +42,24 @@ public class User{
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
+    private String role;
+
+    @Column(nullable = false)
+    private String reserve;
+
 
 
     // JPA requirement
     protected User() {}
 
-    public User(String custid, String custname, String orgname,  String password ) {
+    public User(String custid, String custname, String orgname,  String password , String role, String reserve) {
     	this.custid = custid;
     	this.custname = custname;
     	this.orgname = orgname;
         this.password = password;
+        this.role = role;
+        this.reserve = reserve;
         //this.enabled = true;
         //this.authorities = EnumSet.of(Authority.ROLE_USER);
     }
@@ -86,6 +94,22 @@ public class User{
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+
+  //@Override
+    public String getRole() {
+        return role;
+    }
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    //@Override
+    public String getReserve() {
+        return reserve;
+    }
+    public void setReserve(String reserve) {
+        this.reserve = reserve;
     }
 
 }
