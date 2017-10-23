@@ -105,13 +105,13 @@ public class userService{
 	//User user = new User(custid,username, orgname, passwordEncoder.encode(password));
 	//repository.save(user);
 	@RequestMapping("/signup")
-	String db(Map<String, Object> model){
+	//String db(Map<String, Object> model){
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
 			//stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
 			stmt.executeUpdate("INSERT INTO userdata VALUES (signupform.getCustid(),signupform.getCustname(), signupform.getOrgname(),signupform.getPassword(),signupform.getRole(),signupform.getReserve())");
-			ResultSet rs = stmt.executeQuery("SELECT * FROM userdata");
-
+			//ResultSet rs = stmt.executeQuery("SELECT * FROM userdata");
+			/*
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
 	  	        output.add("Read from DB: "
@@ -125,6 +125,7 @@ public class userService{
 				model.put("message", e.getMessage());
 				return "signup";
 			}
+			*/
 		}catch(Exception e){
 			e.printStackTrace();
 			return "signup";
