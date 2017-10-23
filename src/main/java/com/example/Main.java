@@ -46,47 +46,15 @@ import java.util.Map;
 @SpringBootApplication
 public class Main {
 
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(Main.class, args);
-	}
-
-
-	//@Autowired
-	//private userService userservice;
-
-	/*
-
-	@GetMapping("/signup")
-	    public String signup(Model model) {
-	        model.addAttribute("signupform", new signupForm());
-	        return "signup";
-	    }
-
-	@PostMapping("/signup")
-	    public String signupPost(Model model,@Valid signupForm signupform,BindingResult bindingResult, HttpServletRequest request) {
-	        if (bindingResult.hasErrors()) {
-	            return "signup";
-	        }
-
-	        try {
-	            //userservice.registerUser(signupform.getCustid(),signupform.getUsername(), signupform.getOrgname(),signupform.getPassword());
-	        }catch (DataIntegrityViolationException e) {
-	            //model.addAttribute("signupError", true);
-	        	//e.printStackTrace();
-	            return "signup";
-	         }
-
-	        return "signup";
-	    }
-	 */
-
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
 
 	@Autowired
-	@Qualifier("dataSource")
 	private DataSource dataSource;
 
+	public static void main(String[] args) throws Exception {
+		SpringApplication.run(Main.class, args);
+	}
 
 	@RequestMapping({"/","/login"})
 	String login() {
@@ -103,7 +71,6 @@ public class Main {
 		return "signup";
 	}
 	 */
-
 
 	@RequestMapping("/db")
 	String db(Map<String, Object> model){
