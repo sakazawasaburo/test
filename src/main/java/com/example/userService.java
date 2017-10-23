@@ -114,7 +114,7 @@ String db(Map<String, Object> model){
 
 		ArrayList<String> output = new ArrayList<String>();
 		while (rs.next()) {
-			output.add("Read from DB: "
+			output.add("Read from DB: ");
 					//+ rs.getTimestamp("tick"));
 		}
 
