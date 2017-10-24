@@ -47,6 +47,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+import java.util.Enumeration;
 
 
 @Controller
@@ -89,7 +93,7 @@ public class Main {
 			String CUSTNAME = session.getAttribute("custname");
 			String ORGNAME = session.getAttribute("orgname");
 			String PASSWORD = session.getAttribute("password");
-*/
+			 */
 			try (Connection connection = dataSource.getConnection()) {
 
 				Statement stmt = connection.createStatement();
@@ -112,32 +116,32 @@ public class Main {
 		}
 	}
 
-		@RequestMapping("/Account")
-		String Account() {
-			return "Account";
-		}
+	@RequestMapping("/Account")
+	String Account() {
+		return "Account";
+	}
 
-		/*@RequestMapping("/db")
+	/*@RequestMapping("/db")
 	String index() {
 		return "db";
 	}
-		 */
+	 */
 
-		@RequestMapping("/logview")
-		String logview() {
-			return "logview";
-		}
+	@RequestMapping("/logview")
+	String logview() {
+		return "logview";
+	}
 
 
-		@Bean
-		@ConfigurationProperties("spring.datasource")
-		public DataSource dataSource() throws SQLException {
-			if (dbUrl == null || dbUrl.isEmpty()) {
-				return new HikariDataSource();
-			} else {
-				HikariConfig config = new HikariConfig();
-				config.setJdbcUrl(dbUrl);
-				return new HikariDataSource(config);
-			}
+	@Bean
+	@ConfigurationProperties("spring.datasource")
+	public DataSource dataSource() throws SQLException {
+		if (dbUrl == null || dbUrl.isEmpty()) {
+			return new HikariDataSource();
+		} else {
+			HikariConfig config = new HikariConfig();
+			config.setJdbcUrl(dbUrl);
+			return new HikariDataSource(config);
 		}
 	}
+}
