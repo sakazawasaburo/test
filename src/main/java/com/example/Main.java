@@ -85,7 +85,7 @@ public class Main {
 
 
 	@RequestMapping("/signup")
-	String signup(Map<String, Object> model){
+	//String signup(Map<String, Object> model){
 		public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException {
 
 			HttpSession session = request.getSession();
@@ -114,7 +114,7 @@ public class Main {
 				return "signup";
 			}
 		}
-	}
+	//}
 
 	@RequestMapping("/Account")
 	String Account() {
