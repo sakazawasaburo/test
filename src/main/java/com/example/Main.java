@@ -111,7 +111,7 @@ public class Main {
 
 				//return "signup";
 			} catch (Exception e) {
-				model.put("message", e.getMessage());
+				//model.put("message", e.getMessage());
 				//return "signup";
 			}
 		}
