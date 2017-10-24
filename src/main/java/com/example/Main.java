@@ -79,8 +79,7 @@ public class Main {
 
 	@RequestMapping("/signup")
 	String db(Map<String, Object> model){
-		public void doGet(HttpServletRequest request, HttpServletResponse response)
-				throws IOException, ServletException{
+		public void doGet(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException{
 
 			response.setContentType("text/html; charset=Shift_JIS");
 
