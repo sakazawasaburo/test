@@ -3,44 +3,58 @@
 <head>
 <meta charset="utf-8">
 <title>signup</title>
+<script src="http://code.jquery.com/jquery-1.7.1.js"></script>
+<script src="jquery.cookie.js"></script>
 <script type="text/javascript">
-    function signup(){
-        var hoge = signup_form.custid.value;   //テキストエリアの値を取得
-        var hoge = signup_form.custname.value; //テキストエリアの値を取得
-        var hoge = signup_form.orgname.value;  //テキストエリアの値を取得
-        var hoge = signup_form.password.value; //テキストエリアの値を取得
-    }
+    $(function(){
+ //読み込んだクッキーをフォームのvalue値として代入
+  $('#custid').val($.cookie("custid"));
+ $('#custname').val($.cookie("custname"));
+  $('#orgname').val($.cookie("orgname"));
+ $('#password').val($.cookie("password"));
+
+
+  //submitを押したら、クッキーを保存
+  $("#submit").click(function(){
+
+  $.cookie("custid",$('#custid').attr('value'));
+  $.cookie("custname",$('#custname').attr('value'));
+  $.cookie("orgname",$('#orgname').attr('value'));
+  $.cookie("password",$('#password').attr('value'));
+
+
+  location.href="Main.java"
+  })
+  })
 </script>
 </head>
 
 <body>
-<form name="signup_form" action="signup.html">
-
+<form name="signup_form" action="Main.java" method="post">
  <label for="custid">ID</label>
- <br></br>
+ <br><br>
  <input type="text" name="custid" id="custid">
 <br>
 </br>
 
 <label for="custname">ユーザー名</label>
- <br></br>
+ <br><br>
  <input type="text" name="custname" id="custname">
 <br>
 </br>
 
 <label for="orgname">組織名</label>
- <br></br>
+ <br><br>
  <input type="text" name="orgname" id="orgname">
 <br>
 </br>
 
-<label for="orgname">Password</label>
- <br></br>
+<label for="password">Password</label>
+ <br><br>
  <input type="password" name="password" id="password">
-<br>
-</br>
+<br><br>
 
-<input type="button" value="登録" onclick="signup()">
+<input type="submit" value="登録" onclick="signup()">
 
 </form>
 </body>
