@@ -63,7 +63,7 @@ public class UserController {
 	private DataSource dataSource;
 
 	@RequestMapping("/signup")
-	@WebServlet("/UserController")
+	@WebServlet
 	public class UserController extends HttpServlet{
 		private static final long serialVersionUID = 1L;
 
