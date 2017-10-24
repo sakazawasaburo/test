@@ -30,19 +30,19 @@ public class User{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false, unique = true)
+    @Column(name = "custid",nullable = false, unique = true)
     private String custid;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "custname",nullable = false, unique = true)
     private String custname;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "orgname",nullable = false, unique = true)
     private String orgname;
 
-    @Column(nullable = false)
+    @Column(name = "password",nullable = false)
     private String password;
 
-
+/*
     // JPA requirement
     protected User() {}
 
@@ -54,6 +54,7 @@ public class User{
         //this.enabled = true;
         //this.authorities = EnumSet.of(Authority.ROLE_USER);
     }
+*/
 
     //@Override
     public String getCustid() {

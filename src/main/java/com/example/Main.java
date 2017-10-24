@@ -73,7 +73,7 @@ public class Main {
 	 */
 
 	@RequestMapping("/signup")
-	String db(Map<String, Object> model){
+	String signup(Map<String, Object> model){
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
 			//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'1234567','すいか太郎','行政システム' ,'password','1','ADMIN')");
