@@ -42,10 +42,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
-//import java.io.*;
-//import javax.servlet.*;
-//import javax.servlet.http.*;
-
 @Controller
 @SpringBootApplication
 public class Main {
@@ -76,21 +72,13 @@ public class Main {
 	}
 	 */
 
-
 	@RequestMapping("/signup")
 	String db(Map<String, Object> model){
-		//public void doGet(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException{
+		try (Connection connection = dataSource.getConnection()) {
+			Statement stmt = connection.createStatement();
+			stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'1234567','すいか太郎','行政システム' ,'password','1','ADMIN')");
 
-			//response.setContentType("text/html; charset=Shift_JIS");
-
-
-
-			try (Connection connection = dataSource.getConnection()) {
-				Statement stmt = connection.createStatement();
-				stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,$(‘#custid’).val($.cookie(“custid”));,$(‘#custname’).val($.cookie(“custname”));,$(‘#orgname’).val($.cookie(“orgname”)); ,$(‘#custname’).val($.cookie(“custname”));,$(‘#password’).val($.cookie(“password”));,'1','ADMIN')");
-				//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'1234567','すいか太郎','行政システム' ,'password','1','ADMIN')");
-
-				/*ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
+			/*ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
 				output.add("Read from DB: "+ rs.getString("orgname"));
@@ -98,15 +86,12 @@ public class Main {
 
 			model.put("records", output);*/
 
-				return "signup";
-			} catch (Exception e) {
-				model.put("message", e.getMessage());
-				return "signup";
-			}
-
+			return "signup";
+		} catch (Exception e) {
+			model.put("message", e.getMessage());
+			return "signup";
 		}
 	}
-
 
 
 	@RequestMapping("/Account")
@@ -118,7 +103,7 @@ public class Main {
 	String index() {
 		return "db";
 	}
-	 */
+	*/
 
 	@RequestMapping("/logview")
 	String logview() {
