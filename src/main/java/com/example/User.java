@@ -1,4 +1,4 @@
-/*package com.example;
+package com.example;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -42,24 +42,15 @@ public class User{
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private String role;
-
-    @Column(nullable = false)
-    private String reserve;
-
-
 
     // JPA requirement
     protected User() {}
 
-    public User(String custid, String custname, String orgname,  String password , String role, String reserve) {
+    public User(String custid, String custname, String orgname,  String password ) {
     	this.custid = custid;
     	this.custname = custname;
     	this.orgname = orgname;
         this.password = password;
-        this.role = role;
-        this.reserve = reserve;
         //this.enabled = true;
         //this.authorities = EnumSet.of(Authority.ROLE_USER);
     }
@@ -96,22 +87,7 @@ public class User{
         this.password = password;
     }
 
-  //@Override
-    public String getRole() {
-        return role;
-    }
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    //@Override
-    public String getReserve() {
-        return reserve;
-    }
-    public void setReserve(String reserve) {
-        this.reserve = reserve;
-    }
 
 }
 
-*/
+
