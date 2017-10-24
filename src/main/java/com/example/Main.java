@@ -51,6 +51,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 import java.util.Enumeration;
+import org.springframework.ui.Model;
 
 
 @Controller
@@ -108,10 +109,10 @@ public class Main {
 
 			model.put("records", output);*/
 
-				return "signup";
+				//return "signup";
 			} catch (Exception e) {
 				model.put("message", e.getMessage());
-				return "signup";
+				//return "signup";
 			}
 		}
 	//}
