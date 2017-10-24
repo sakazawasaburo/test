@@ -81,7 +81,7 @@ public class Main {
 	String db(Map<String, Object> model){
 		public void doGet(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException{
 
-			response.setContentType("text/html; charset=Shift_JIS");
+			//response.setContentType("text/html; charset=Shift_JIS");
 
 
 
