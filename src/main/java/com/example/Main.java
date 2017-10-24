@@ -42,6 +42,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+
 @Controller
 @SpringBootApplication
 public class Main {
@@ -75,11 +82,21 @@ public class Main {
 
 	@RequestMapping("/signup")
 	String signup(Map<String, Object> model){
-		try (Connection connection = dataSource.getConnection()) {
-			Statement stmt = connection.createStatement();
-			//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'1234567','すいか太郎','行政システム' ,'password','1','ADMIN')");
+		public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException {
 
-			/*ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
+			HttpSession session = request.getSession();
+			/*String CUSTID = session.getAttribute("custid");
+			String CUSTNAME = session.getAttribute("custname");
+			String ORGNAME = session.getAttribute("orgname");
+			String PASSWORD = session.getAttribute("password");
+*/
+			try (Connection connection = dataSource.getConnection()) {
+
+				Statement stmt = connection.createStatement();
+				//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,CUSTID,CUSTNAME,ORGNAME,PASSWORD,'1','ADMIN')");
+				session.invalidate();
+
+				/*ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
 				output.add("Read from DB: "+ rs.getString("orgname"));
@@ -87,40 +104,40 @@ public class Main {
 
 			model.put("records", output);*/
 
-			return "signup";
-		} catch (Exception e) {
-			model.put("message", e.getMessage());
-			return "signup";
+				return "signup";
+			} catch (Exception e) {
+				model.put("message", e.getMessage());
+				return "signup";
+			}
 		}
 	}
 
+		@RequestMapping("/Account")
+		String Account() {
+			return "Account";
+		}
 
-	@RequestMapping("/Account")
-	String Account() {
-		return "Account";
-	}
-
-	/*@RequestMapping("/db")
+		/*@RequestMapping("/db")
 	String index() {
 		return "db";
 	}
-	*/
+		 */
 
-	@RequestMapping("/logview")
-	String logview() {
-		return "logview";
-	}
+		@RequestMapping("/logview")
+		String logview() {
+			return "logview";
+		}
 
 
-	@Bean
-	@ConfigurationProperties("spring.datasource")
-	public DataSource dataSource() throws SQLException {
-		if (dbUrl == null || dbUrl.isEmpty()) {
-			return new HikariDataSource();
-		} else {
-			HikariConfig config = new HikariConfig();
-			config.setJdbcUrl(dbUrl);
-			return new HikariDataSource(config);
+		@Bean
+		@ConfigurationProperties("spring.datasource")
+		public DataSource dataSource() throws SQLException {
+			if (dbUrl == null || dbUrl.isEmpty()) {
+				return new HikariDataSource();
+			} else {
+				HikariConfig config = new HikariConfig();
+				config.setJdbcUrl(dbUrl);
+				return new HikariDataSource(config);
+			}
 		}
 	}
-}
