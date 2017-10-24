@@ -84,7 +84,7 @@ public class Main {
 	}
 	 */
 
-
+/*
 	@RequestMapping("/signup")
 	//String signup(Map<String, Object> model){
 		public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException {
@@ -95,11 +95,11 @@ public class Main {
 			String ORGNAME = session.getAttribute("orgname");
 			String PASSWORD = session.getAttribute("password");
 			 */
-			try (Connection connection = dataSource.getConnection()) {
+			//try (Connection connection = dataSource.getConnection()) {
 
-				Statement stmt = connection.createStatement();
+				//Statement stmt = connection.createStatement();
 				//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,CUSTID,CUSTNAME,ORGNAME,PASSWORD,'1','ADMIN')");
-				session.invalidate();
+				//session.invalidate();
 
 				/*ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
 			ArrayList<String> output = new ArrayList<String>();
@@ -110,11 +110,11 @@ public class Main {
 			model.put("records", output);*/
 
 				//return "signup";
-			} catch (Exception e) {
+			/*} catch (Exception e) {
 				//model.put("message", e.getMessage());
 				//return "signup";
 			}
-		}
+		}*/
 	//}
 
 	@RequestMapping("/Account")

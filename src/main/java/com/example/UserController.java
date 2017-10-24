@@ -1,4 +1,4 @@
-/*package com.example;
+package com.example;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -43,7 +43,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
-import com.example.User.java
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 
 @Controller
@@ -56,15 +62,27 @@ public class UserController {
 	@Autowired
 	private DataSource dataSource;
 
-	@RequestMapping(method=RequestMethod.GET)
-	public String test(Model model) {
-		try (Connection connection = dataSource.getConnection()) {
-			Statement stmt = connection.createStatement();
-			stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'custid','custname','orgname' ,'password','1','ADMIN')");
-			return "signup";
-		} catch (Exception e) {
-			model.put("message", e.getMessage());
-			return "signup";
+	@RequestMapping("/signup")
+	@WebServlet("/UserController")
+	public class UserController extends HttpServlet{
+		private static final long serialVersionUID = 1L;
+
+		protected void doPost(HttpServletRequest request, HttpServletResponce responce) throws ServletException,IOException{
+
+			request.setCharacterEncoding("UTF-8");
+			String CUSTID =request.getParameter("custid");
+			String CUSTNAME =request.getParameter("custname");
+			String ORGNAME =request.getParameter("orgname");
+			String PASSWORD  = request.getParameter("password");
+
+			try (Connection connection = dataSource.getConnection()) {
+				Statement stmt = connection.createStatement();
+				stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,CUSTID,CUSTNAME,ORGNAME,PASSWORD,'1','ADMIN')");
+				return "signup";
+			} catch (Exception e) {
+				model.put("message", e.getMessage());
+				return "signup";
+			}
 		}
 	}
 
@@ -82,4 +100,3 @@ public class UserController {
 	}
 
 }
-*/
