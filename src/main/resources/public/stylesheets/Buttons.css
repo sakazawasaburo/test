@@ -40,3 +40,9 @@ button.button5:hover {
     /* 文字色を白色に指定 */
     color: #fff;
 }
+
+@media all and (-webkit-min-device-pixel-ratio:0)and (min-resolution: .001dpcm) {
+button.chrome{
+    margin-left: -4px;
+  }
+}

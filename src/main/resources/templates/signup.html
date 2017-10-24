@@ -1,48 +1,45 @@
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/layout :: base_header(~{::link},'signup')">
-<link href="/stylesheets/jquery.bootgrid.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>signup</title>
+<script type="text/javascript">
+    function signup(){
+        var custid   = document.getElementById("custid").value;   //テキストエリアの値を取得
+        var custname = document.getElementById("custname").value; //テキストエリアの値を取得
+        var orgname  = document.getElementById("orgname").value;  //テキストエリアの値を取得
+        var password = document.getElementById("password").value; //テキストエリアの値を取得
+    }
+</script>
 </head>
-<body>
-	<div th:replace="fragments/layout :: header"></div>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-md-push-3 col-md-6">
-				<div class="form-wrap">
-					<div class="text-center">
-						<h1>アカウント登録</h1>
-					</div>
-					<br />
-					<form role="form" action="#" th:action="@{/signup}" method="post"
-						id="signup" autocomplete="off">
-						<div class="form-group"
-							th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
-							<p class="form-control-static text-danger"
-								th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></p>
-						</div>
-						<div class="form-group">
-							<label for="custid" class="sr-only"></label> ID <input
-								type="text" name="custid" id = "custid" class="form-control" />
-						</div>
-						<div class="form-group">
-							<label for="custname" class="sr-only"></label>ユーザー名 <input
-								type="text" name="custname" id = "custname" class="form-control" />
-						</div>
-						<div class="form-group">
-							<label for="orgname" class="sr-only"></label>組織名 <input
-								type="text"  name="orgname" id = "orgname" class="form-control" />
-						</div>
-						<div class="form-group">
-							<label for="password" class="sr-only"></label>Password <input
-								type="password"  name="password" id = "password"
-								class="form-control" />
-						</div>
 
-						<br />
-						<button  id="btn-signup" class="btn btn-primary btn-block">登録</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+<body>
+<form name="signup_form" action="signup.html" method="post">
+ <label for="custid">ID</label>
+ <br><br>
+ <input type="text" name="custid" id="custid">
+<br>
+</br>
+
+<label for="custname">ユーザー名</label>
+ <br><br>
+ <input type="text" name="custname" id="custname">
+<br>
+</br>
+
+<label for="orgname">組織名</label>
+ <br><br>
+ <input type="text" name="orgname" id="orgname">
+<br>
+</br>
+
+<label for="password">Password</label>
+ <br><br>
+ <input type="password" name="password" id="password">
+<br><br>
+
+<input type="button" value="登録" onclick="signup()">
+
+</form>
 </body>
 </html>
