@@ -52,19 +52,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-	@WebServlet("/UserController")
-	public class UserController extends HttpServlet{
+@WebServlet("/UserController")
+public class UserController extends HttpServlet{
 
-		private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-		@Value("${spring.datasource.url}")
-		private String dbUrl;
+	@Value("${spring.datasource.url}")
+	private String dbUrl;
 
-		@Autowired
-		private DataSource dataSource;
+	@Autowired
+	private DataSource dataSource;
 
 
-
+	@RequestMapping("/signup")
+	String signup{
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
 
 			request.setCharacterEncoding("UTF-8");
@@ -83,20 +84,20 @@ import javax.servlet.http.HttpServletResponse;
 			}
 		}
 
-
-
-		@Bean
-		@ConfigurationProperties("spring.datasource")
-		public DataSource dataSource() throws SQLException {
-			if (dbUrl == null || dbUrl.isEmpty()) {
-				return new HikariDataSource();
-			} else {
-				HikariConfig config = new HikariConfig();
-				config.setJdbcUrl(dbUrl);
-				return new HikariDataSource(config);
-			}
-		}
-
 	}
+
+	@Bean
+	@ConfigurationProperties("spring.datasource")
+	public DataSource dataSource() throws SQLException {
+		if (dbUrl == null || dbUrl.isEmpty()) {
+			return new HikariDataSource();
+		} else {
+			HikariConfig config = new HikariConfig();
+			config.setJdbcUrl(dbUrl);
+			return new HikariDataSource(config);
+		}
+	}
+
+}
 
 

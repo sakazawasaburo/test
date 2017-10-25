@@ -3,12 +3,19 @@
 <head>
 <meta charset="utf-8">
 <title>signup</title>
+<script src="/main/java/com/example/Main.java"></script>
 <script type="text/javascript">
     function signup(){
-        var custid   = document.getElementById("custid").value;   //テキストエリアの値を取得
-        var custname = document.getElementById("custname").value; //テキストエリアの値を取得
-        var orgname  = document.getElementById("orgname").value;  //テキストエリアの値を取得
-        var password = document.getElementById("password").value; //テキストエリアの値を取得
+        var Custid   = document.getElementById("custid").value;   //テキストエリアの値を取得
+        var Custname = document.getElementById("custname").value; //テキストエリアの値を取得
+        var Orgname  = document.getElementById("orgname").value;  //テキストエリアの値を取得
+        var Passord = document.getElementById("password").value; //テキストエリアの値を取得
+
+        var storage = localStorage;
+        storage.setItem("custid","Custid");
+        storage.setItem("custname","Custname");
+        storage.setItem("orgname","Orgname");
+        storage.setItem("password","Password");
     }
 </script>
 </head>

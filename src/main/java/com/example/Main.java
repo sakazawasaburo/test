@@ -67,25 +67,12 @@ public class Main {
 		return "Home";
 	}
 
-	/*@RequestMapping("/signup")
-	String signup() {
-		return "signup";
-	}
-	 */
-
+	/*
 	@RequestMapping("/signup")
 	String db(Map<String, Object> model){
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
 			//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'1234567','すいか太郎','行政システム' ,'password','1','ADMIN')");
-
-			/*ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
-			ArrayList<String> output = new ArrayList<String>();
-			while (rs.next()) {
-				output.add("Read from DB: "+ rs.getString("orgname"));
-			}
-
-			model.put("records", output);*/
 
 			return "signup";
 		} catch (Exception e) {
@@ -93,18 +80,13 @@ public class Main {
 			return "signup";
 		}
 	}
-
+*/
 
 	@RequestMapping("/Account")
 	String Account() {
 		return "Account";
 	}
 
-	/*@RequestMapping("/db")
-	String index() {
-		return "db";
-	}
-	*/
 
 	@RequestMapping("/logview")
 	String logview() {
