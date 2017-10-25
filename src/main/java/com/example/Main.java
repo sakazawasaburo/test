@@ -42,6 +42,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.HashMap;
 
 import java.io.*;
 import javax.servlet.*;
@@ -74,22 +75,24 @@ public class Main extends HttpServlet{
 
 
 	//String db(Map<String, Object> model){
-	@RequestMapping("/signup")
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException{
-		//return "signup";
-		HttpSession session = req.getSession();
-		String CUSTID = session.getAttribute("custid");
-		String CUSTNAME = session.getAttribute("custname");
-		String ORGNAME = session.getAttribute("orgname");
-		String PASSWORD = session.getAttribute("password");
-	}
-	String signup(){
+	@RequestMapping("/signup",method = RequestMethod.POST)
+	public Map<String, String> post(
+            HttpServletRequest request) {
+        Map<String, String> map = new HashMap<>();
+        map.put("parameter1", request.getParameter("parameter1"));
+        map.put("parameter2", request.getParameter("parameter2"));
+        map.put("parameter3", request.getParameter("parameter3"));
+        map.put("parameter4", request.getParameter("parameter4"));
+
+        String CUSTID = request.getParameter("parameter1");
+        String CUSTNAME = request.getParameter("parameter2");
+        String ORGNAME = request.getParameter("parameter3");
+        String PASSWORD = request.getParameter("parameter4");
+
+	//String signup(){
 			try (Connection connection = dataSource.getConnection()) {
 				Statement stmt = connection.createStatement();
 				//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'1234567','すいか太郎','行政システム' ,'password','1','ADMIN')");
-
-
 
 				stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'CUSTID','CUSTNAME','ORGNAME','PASSWORD','1','ADMIN')");
 				return "signup";

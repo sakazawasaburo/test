@@ -3,50 +3,41 @@
 <head>
 <meta charset="utf-8">
 <title>signup</title>
-<script src="/main/java/com/example/Main.java"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+	type="text/javascript"></script>
 <script type="text/javascript">
-    function signup(){
-        var Custid   = document.getElementById("custid").value;   //テキストエリアの値を取得
-        var Custname = document.getElementById("custname").value; //テキストエリアの値を取得
-        var Orgname  = document.getElementById("orgname").value;  //テキストエリアの値を取得
-        var Passord = document.getElementById("password").value; //テキストエリアの値を取得
+ $( function() {
+        $( '#register' ) .click(
+        function() {
+        	var hostUrl= 'main/java/com/example/Main.java';
+	        var Custid   = document.getElementById("custid").value;   //テキストエリアの値を取得
+	        var Custname = document.getElementById("custname").value; //テキストエリアの値を取得
+	        var Orgname  = document.getElementById("orgname").value;  //テキストエリアの値を取得
+	        var Passord = document.getElementById("password").value;  //テキストエリアの値を取得
 
-        var storage = localStorage;
-        storage.setItem("custid","Custid");
-        storage.setItem("custname","Custname");
-        storage.setItem("orgname","Orgname");
-        storage.setItem("password","Password");
-    }
+			$.ajax({
+                url: hostUrl,
+                type:'POST',
+                dataType: 'json',
+                data : {parameter1 : Custid, parameter2 : Custname, parameter3 : Orgname, parameter4 : Password },
+            })
+   		 });
+    } );
 </script>
 </head>
 
 <body>
-<form name="signup_form" action="signup.html" method="post">
- <label for="custid">ID</label>
- <br><br>
- <input type="text" name="custid" id="custid">
-<br>
-</br>
+	<form name="signup_form" action="signup.html" method="post">
+		<label for="custid">ID</label> <br> <br> <input type="text"
+			name="custid" id="custid"> <br> </br> <label for="custname">ユーザー名</label>
+		<br> <br> <input type="text" name="custname" id="custname">
+		<br> </br> <label for="orgname">組織名</label> <br> <br> <input
+			type="text" name="orgname" id="orgname"> <br> </br> <label
+			for="password">Password</label> <br> <br> <input
+			type="password" name="password" id="password"> <br> <br>
+		<input type="button" id=register value="登録"">
 
-<label for="custname">ユーザー名</label>
- <br><br>
- <input type="text" name="custname" id="custname">
-<br>
-</br>
-
-<label for="orgname">組織名</label>
- <br><br>
- <input type="text" name="orgname" id="orgname">
-<br>
-</br>
-
-<label for="password">Password</label>
- <br><br>
- <input type="password" name="password" id="password">
-<br><br>
-
-<input type="button" value="登録" onclick="signup()">
-
-</form>
+	</form>
 </body>
 </html>
