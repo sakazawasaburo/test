@@ -76,13 +76,15 @@ public class Main {
 	}
 
 
-	@RequestMapping("/signup")
-	//String db(Map<String, Object> model){
-	String signup(){
-		void doGet(HttpServletRequest request, HttpServletResponse response)
-				throws IOException, ServletException{
 
-		}
+	//String db(Map<String, Object> model){
+	@RequestMapping("/signup")
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
+
+	}
+	String signup(){
+		public void doGet(HttpServletRequest request, HttpServletResponse response)
+				throws IOException, ServletException{
 			try (Connection connection = dataSource.getConnection()) {
 				Statement stmt = connection.createStatement();
 				//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'1234567','すいか太郎','行政システム' ,'password','1','ADMIN')");
