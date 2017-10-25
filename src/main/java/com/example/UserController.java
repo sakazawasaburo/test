@@ -82,19 +82,21 @@ import javax.servlet.http.HttpServletResponse;
 				return "Account";
 			}
 		}
-	}
 
 
-	@Bean
-	@ConfigurationProperties("spring.datasource")
-	public DataSource dataSource() throws SQLException {
-		if (dbUrl == null || dbUrl.isEmpty()) {
-			return new HikariDataSource();
-		} else {
-			HikariConfig config = new HikariConfig();
-			config.setJdbcUrl(dbUrl);
-			return new HikariDataSource(config);
+
+		@Bean
+		@ConfigurationProperties("spring.datasource")
+		public DataSource dataSource() throws SQLException {
+			if (dbUrl == null || dbUrl.isEmpty()) {
+				return new HikariDataSource();
+			} else {
+				HikariConfig config = new HikariConfig();
+				config.setJdbcUrl(dbUrl);
+				return new HikariDataSource(config);
+			}
 		}
+
 	}
 
 
