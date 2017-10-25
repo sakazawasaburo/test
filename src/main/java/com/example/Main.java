@@ -79,12 +79,11 @@ public class Main {
 
 	//String db(Map<String, Object> model){
 	@RequestMapping("/signup")
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException{
 		return "signup";
 	}
 	String signup(){
-		public void doGet(HttpServletRequest request, HttpServletResponse response)
-				throws IOException, ServletException{
 			try (Connection connection = dataSource.getConnection()) {
 				Statement stmt = connection.createStatement();
 				//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'1234567','すいか太郎','行政システム' ,'password','1','ADMIN')");
