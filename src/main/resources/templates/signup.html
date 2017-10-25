@@ -3,13 +3,21 @@
 <head>
 <meta charset="utf-8">
 <title>signup</title>
+<script type="text/javascript">
+    function signup(){
+        var custid   = document.getElementById("custid").value;   //テキストエリアの値を取得
+        var custname = document.getElementById("custname").value; //テキストエリアの値を取得
+        var orgname  = document.getElementById("orgname").value;  //テキストエリアの値を取得
+        var password = document.getElementById("password").value; //テキストエリアの値を取得
+    }
+</script>
 </head>
 
 <body>
-<form name="signup_form" method="post" action="/com/example/UserController" >
+<form name="signup_form" action="signup.html" method="post">
  <label for="custid">ID</label>
  <br><br>
- <input type="text" name="custid">
+ <input type="text" name="custid" id="custid">
 <br>
 </br>
 
@@ -25,12 +33,12 @@
 <br>
 </br>
 
-<label for="password">Pass</label>
+<label for="password">Password</label>
  <br><br>
  <input type="password" name="password" id="password">
 <br><br>
 
-<input type="button" value="登録">
+<input type="button" value="登録" onclick="signup()">
 
 </form>
 </body>
