@@ -76,8 +76,8 @@ public class Main extends HttpServlet{
 
 
 	//String db(Map<String, Object> model){
-	@RequestMapping(value ="/signup", method = RequestMethod.POST)
-	String post(HttpServletRequest request) {
+	@RequestMapping(value ="/signup/", method ={RequestMethod.POST})
+	String signup(HttpServletRequest request) {
 		/*Map<String, String> map = new HashMap<>();
 		map.put("parameter1", request.getParameter("parameter1"));
 		map.put("parameter2", request.getParameter("parameter2"));
