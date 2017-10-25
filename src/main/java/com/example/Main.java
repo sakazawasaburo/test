@@ -81,6 +81,8 @@ public class Main {
 	String signup(){
 		public void doGet(HttpServletRequest request, HttpServletResponse response)
 				throws IOException, ServletException{
+
+		}
 			try (Connection connection = dataSource.getConnection()) {
 				Statement stmt = connection.createStatement();
 				//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'1234567','すいか太郎','行政システム' ,'password','1','ADMIN')");
@@ -93,7 +95,7 @@ public class Main {
 				//model.put("message", e.getMessage());
 				return "signup";
 			}
-		}
+
 	}
 
 
