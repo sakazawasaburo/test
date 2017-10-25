@@ -74,7 +74,7 @@ public class Main extends HttpServlet{
 	}
 
 
-
+/*
 	//String db(Map<String, Object> model){
 	@RequestMapping(value ="/signup/", method ={RequestMethod.POST})
 	String signup(HttpServletRequest request) {
@@ -85,6 +85,7 @@ public class Main extends HttpServlet{
 		map.put("parameter4", request.getParameter("parameter4"));
 		*/
 
+/*
 		String CUSTID = request.getParameter("parameter1");
 		String CUSTNAME = request.getParameter("parameter2");
 		String ORGNAME = request.getParameter("parameter3");
@@ -102,6 +103,7 @@ public class Main extends HttpServlet{
 		}
 		return "signup";
 	}
+*/
 
 
 	@RequestMapping("/Account")

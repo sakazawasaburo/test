@@ -1,4 +1,4 @@
-/*package com.example;
+package com.example;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -65,25 +65,26 @@ public class UserController extends HttpServlet{
 
 
 	@RequestMapping("/signup")
-	String signup{
-		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
+	//String signup{
+		/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
 
 			request.setCharacterEncoding("UTF-8");
 			String CUSTID =request.getParameter("custid");
 			String CUSTNAME =request.getParameter("custname");
 			String ORGNAME =request.getParameter("orgname");
 			String PASSWORD  = request.getParameter("password");
-
+*/
+		String db(Map<String, Object> model){
 			try (Connection connection = dataSource.getConnection()) {
 				Statement stmt = connection.createStatement();
-				stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,CUSTID,CUSTNAME,ORGNAME,PASSWORD,'1','ADMIN')");
-				//return "account.jsp";
+				//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,CUSTID,CUSTNAME,ORGNAME,PASSWORD,'1','ADMIN')");
+				//return "signup";
 			} catch (Exception e) {
 				//model.put("message", e.getMessage());
-				//return "account.jsp";
+				//return "signup";
 			}
 		}
-
+			return "signup";
 	}
 
 	@Bean
@@ -100,4 +101,4 @@ public class UserController extends HttpServlet{
 
 }
 
-*/
+
