@@ -82,6 +82,11 @@ public class Main {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException{
 		//return "signup";
+		HttpSession session = req.getSession();
+		String CUSTID = session.getAttribute("custid");
+		String CUSTNAME = session.getAttribute("custname");
+		String ORGNAME = session.getAttribute("orgname");
+		String PASSWORD = session.getAttribute("password");
 	}
 	String signup(){
 			try (Connection connection = dataSource.getConnection()) {
@@ -90,7 +95,7 @@ public class Main {
 
 
 
-				//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'CUSTID','CUSTNAME','ORGNAME','PASSWORD','1','ADMIN')");
+				stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'CUSTID','CUSTNAME','ORGNAME','PASSWORD','1','ADMIN')");
 				return "signup";
 			} catch (Exception e) {
 				//model.put("message", e.getMessage());
