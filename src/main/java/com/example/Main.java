@@ -53,7 +53,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @SpringBootApplication
-public class Main {
+public class Main extends HttpServlet{
 
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
