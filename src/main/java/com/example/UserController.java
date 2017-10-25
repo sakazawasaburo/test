@@ -1,4 +1,4 @@
-package com.example;
+/*package com.example;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -73,6 +73,7 @@ public class UserController{
 			String ORGNAME =request.getParameter("orgname");
 			String PASSWORD  = request.getParameter("password");
 */
+/*
 	@RequestMapping("/signup")
 		String db(Map<String, Object> model){
 			try (Connection connection = dataSource.getConnection()) {
@@ -101,4 +102,4 @@ public class UserController{
 
 }
 
-
+*/

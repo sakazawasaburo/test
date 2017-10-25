@@ -4,23 +4,28 @@
 <meta charset="utf-8"></meta>
 <title>signup</title>
 <script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-	type="text/javascript">
 
-        function signup() {
-        	var hostUrl  = 'main/java/com/example/Main.java';
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+	type="text/javascript">
+	$(function() {
+		$("#register").click(function(){
 	        var Custid   = document.getElementById("custid").value;   //テキストエリアの値を取得
 	        var Custname = document.getElementById("custname").value; //テキストエリアの値を取得
 	        var Orgname  = document.getElementById("orgname").value;  //テキストエリアの値を取得
-	        var Passord  = document.getElementById("password").value;  //テキストエリアの値を取得
+	        var Passord  = document.getElementById("password").value; //テキストエリアの値を取得
 
 			$.ajax({
-                url: hostUrl,
+                url: "signup.php",
                 type:'POST',
-                dataType: 'json',
-                data : {parameter1 : Custid, parameter2 : Custname, parameter3 : Orgname, parameter4 : Password }
-            })
-   		}
+                data : {post_data_1 : Custid,post_data_2 : Custname, post_data_3 : Orgname, post_data_4 : Password }
+            }).done(function(response, textStatus, xhr) {
+			    console.log("ajax通信に成功しました");
+			}).fail(function(xhr, textStatus, errorThrown) {
+			    console.log("ajax通信に失敗しました");
+			});
+   		});
+
+	});
 </script>
 </head>
 
@@ -33,7 +38,7 @@
 			type="text" name="orgname" id="orgname"> <br> </br> <label
 			for="password">Password</label> <br> <br> <input
 			type="password" name="password" id="password"> <br> <br>
-		<input type="button" value="登録" onclick="signup();">
+		<input type="button" id="register" value="登録" >
 
 	</form>
 </body>

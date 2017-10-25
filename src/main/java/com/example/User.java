@@ -1,4 +1,4 @@
-package com.example;
+/*package com.example;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -55,7 +55,7 @@ public class User{
         //this.authorities = EnumSet.of(Authority.ROLE_USER);
     }
 */
-
+/*
     //@Override
     public String getCustid() {
         return custid;
@@ -91,4 +91,4 @@ public class User{
 
 }
 
-
+*/
