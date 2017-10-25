@@ -65,7 +65,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-		protected void doPost(HttpServletRequest request, HttpServletResponce responce) throws ServletException,IOException{
+		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
 
 			request.setCharacterEncoding("UTF-8");
 			String CUSTID =request.getParameter("custid");
