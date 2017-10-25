@@ -77,15 +77,15 @@ public class Main extends HttpServlet{
 
 	//String db(Map<String, Object> model){
 	@RequestMapping(value ="/signup", method = RequestMethod.POST)
-	/*public Map<String, String> post(
+	public Map<String, String> post(
 			HttpServletRequest request) {
-		Map<String, String> map = new HashMap<>();
+		/*Map<String, String> map = new HashMap<>();
 		map.put("parameter1", request.getParameter("parameter1"));
 		map.put("parameter2", request.getParameter("parameter2"));
 		map.put("parameter3", request.getParameter("parameter3"));
 		map.put("parameter4", request.getParameter("parameter4"));
 		*/
-	String signup(){
+
 		String CUSTID = request.getParameter("parameter1");
 		String CUSTNAME = request.getParameter("parameter2");
 		String ORGNAME = request.getParameter("parameter3");
