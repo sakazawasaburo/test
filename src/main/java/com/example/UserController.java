@@ -52,10 +52,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/UserController")
-public class UserController extends HttpServlet{
+public class UserController{
 
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
@@ -64,7 +63,7 @@ public class UserController extends HttpServlet{
 	private DataSource dataSource;
 
 
-	@RequestMapping("/signup")
+	//@RequestMapping("/signup")
 	//String signup{
 		/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
 
@@ -74,6 +73,7 @@ public class UserController extends HttpServlet{
 			String ORGNAME =request.getParameter("orgname");
 			String PASSWORD  = request.getParameter("password");
 */
+	@RequestMapping("/signup")
 		String db(Map<String, Object> model){
 			try (Connection connection = dataSource.getConnection()) {
 				Statement stmt = connection.createStatement();
