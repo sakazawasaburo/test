@@ -80,7 +80,7 @@ public class Main {
 			//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'CUSTID','CUSTNAME','ORGNAME','PASSWORD','1','ADMIN')");
 			return "signup";
 		} catch (Exception e) {
-			model.put("message", e.getMessage());
+			//model.put("message", e.getMessage());
 			return "signup";
 		}
 	}
