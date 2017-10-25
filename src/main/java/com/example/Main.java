@@ -80,7 +80,7 @@ public class Main {
 	//String db(Map<String, Object> model){
 	@RequestMapping("/signup")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-
+		return "signup";
 	}
 	String signup(){
 		public void doGet(HttpServletRequest request, HttpServletResponse response)
