@@ -101,7 +101,7 @@ public class Main extends HttpServlet{
 			//model.put("message", e.getMessage());
 			//return "signup";
 		}
-		return "signup";
+		//return "signup";
 	}
 
 
