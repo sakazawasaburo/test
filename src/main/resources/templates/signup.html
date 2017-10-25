@@ -10,11 +10,11 @@
  $( function() {
         $( '#register' ) .click(
         function() {
-        	var hostUrl= 'main/java/com/example/Main.java';
+        	var hostUrl  = 'main/java/com/example/Main.java';
 	        var Custid   = document.getElementById("custid").value;   //テキストエリアの値を取得
 	        var Custname = document.getElementById("custname").value; //テキストエリアの値を取得
 	        var Orgname  = document.getElementById("orgname").value;  //テキストエリアの値を取得
-	        var Passord = document.getElementById("password").value;  //テキストエリアの値を取得
+	        var Passord  = document.getElementById("password").value;  //テキストエリアの値を取得
 
 			$.ajax({
                 url: hostUrl,
