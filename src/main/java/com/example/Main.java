@@ -79,7 +79,7 @@ public class Main {
 	@RequestMapping("/signup")
 	//String db(Map<String, Object> model){
 	String signup(){
-		public void doGet(HttpServletRequest request, HttpServletResponse response)
+		void doGet(HttpServletRequest request, HttpServletResponse response)
 				throws IOException, ServletException{
 
 		}
