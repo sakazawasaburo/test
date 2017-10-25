@@ -81,7 +81,7 @@ public class Main {
 	@RequestMapping("/signup")
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException{
-		return "signup";
+		//return "signup";
 	}
 	String signup(){
 			try (Connection connection = dataSource.getConnection()) {
