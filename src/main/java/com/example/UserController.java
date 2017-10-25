@@ -63,6 +63,8 @@ import javax.servlet.http.HttpServletResponse;
 	public class UserController extends HttpServlet{
 		private static final long serialVersionUID = 1L;
 
+
+
 		protected void doPost(HttpServletRequest request, HttpServletResponce responce) throws ServletException,IOException{
 
 			request.setCharacterEncoding("UTF-8");
@@ -95,4 +97,4 @@ import javax.servlet.http.HttpServletResponse;
 		}
 	}
 
-}
+
