@@ -43,6 +43,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 @Controller
 @SpringBootApplication
 public class Main {
@@ -71,17 +79,20 @@ public class Main {
 	@RequestMapping("/signup")
 	//String db(Map<String, Object> model){
 	String signup(){
-		try (Connection connection = dataSource.getConnection()) {
-			Statement stmt = connection.createStatement();
-			//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'1234567','すいか太郎','行政システム' ,'password','1','ADMIN')");
+		public void doGet(HttpServletRequest request, HttpServletResponse response)
+				throws IOException, ServletException{
+			try (Connection connection = dataSource.getConnection()) {
+				Statement stmt = connection.createStatement();
+				//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'1234567','すいか太郎','行政システム' ,'password','1','ADMIN')");
 
 
 
-			//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'CUSTID','CUSTNAME','ORGNAME','PASSWORD','1','ADMIN')");
-			return "signup";
-		} catch (Exception e) {
-			//model.put("message", e.getMessage());
-			return "signup";
+				//stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,'CUSTID','CUSTNAME','ORGNAME','PASSWORD','1','ADMIN')");
+				return "signup";
+			} catch (Exception e) {
+				//model.put("message", e.getMessage());
+				return "signup";
+			}
 		}
 	}
 
