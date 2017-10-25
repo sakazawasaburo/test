@@ -7,8 +7,7 @@
 
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
 	type="text/javascript">
-	$(function() {
-		$("#register").click(function(){
+	function signup(){
 	        var Custid   = document.getElementById("custid").value;   //テキストエリアの値を取得
 	        var Custname = document.getElementById("custname").value; //テキストエリアの値を取得
 	        var Orgname  = document.getElementById("orgname").value;  //テキストエリアの値を取得
@@ -17,7 +16,7 @@
 			$.ajax({
                 url: "signup.php",
                 type:'POST',
-                data : {post_data_1 : Custid,post_data_2 : Custname, post_data_3 : Orgname, post_data_4 : Password }
+                data : {post_data_1 : Custid,post_data_2: Custname, post_data_3 : Orgname, post_data_4 : Password }
             }).done(function(response, textStatus, xhr) {
 			    console.log("ajax通信に成功しました");
 			}).fail(function(xhr, textStatus, errorThrown) {
@@ -25,7 +24,7 @@
 			});
    		});
 
-	});
+	}
 </script>
 </head>
 
@@ -38,7 +37,7 @@
 			type="text" name="orgname" id="orgname"> <br> </br> <label
 			for="password">Password</label> <br> <br> <input
 			type="password" name="password" id="password"> <br> <br>
-		<input type="button" id="register" value="登録" >
+		<input type="button" value="登録" onclick = "signup();">
 
 	</form>
 </body>
