@@ -79,8 +79,8 @@ public class Main {
 			model.put("message", e.getMessage());
 			return "signup";
 		}
-	}
-*/
+	}*/
+
 
 	@RequestMapping("/Account")
 	String Account() {
