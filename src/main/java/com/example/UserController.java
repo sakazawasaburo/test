@@ -52,16 +52,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-	@Value("${spring.datasource.url}")
-	private String dbUrl;
-
-	@Autowired
-	private DataSource dataSource;
-
-
 	@WebServlet("/UserController")
 	public class UserController extends HttpServlet{
+
 		private static final long serialVersionUID = 1L;
+
+		@Value("${spring.datasource.url}")
+		private String dbUrl;
+
+		@Autowired
+		private DataSource dataSource;
 
 
 
