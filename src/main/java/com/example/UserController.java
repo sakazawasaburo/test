@@ -52,6 +52,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+	@Controller
+    @SpringBootApplication
 	@WebServlet("/UserController")
 	public class UserController extends HttpServlet{
 
