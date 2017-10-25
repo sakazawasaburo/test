@@ -76,10 +76,10 @@ import javax.servlet.http.HttpServletResponse;
 			try (Connection connection = dataSource.getConnection()) {
 				Statement stmt = connection.createStatement();
 				stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,CUSTID,CUSTNAME,ORGNAME,PASSWORD,'1','ADMIN')");
-				return "account.jsp";
+				//return "account.jsp";
 			} catch (Exception e) {
 				//model.put("message", e.getMessage());
-				return "account.jsp";
+				//return "account.jsp";
 			}
 		}
 
