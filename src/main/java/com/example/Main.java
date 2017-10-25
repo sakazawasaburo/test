@@ -67,7 +67,7 @@ public class Main {
 		return "Home";
 	}
 
-	/*
+
 	@RequestMapping("/signup")
 	String db(Map<String, Object> model){
 		try (Connection connection = dataSource.getConnection()) {
@@ -79,7 +79,7 @@ public class Main {
 			model.put("message", e.getMessage());
 			return "signup";
 		}
-	}*/
+	}
 
 
 	@RequestMapping("/Account")
