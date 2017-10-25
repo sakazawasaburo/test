@@ -7,9 +7,8 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
 	type="text/javascript"></script>
 <script type="text/javascript">
- $( function() {
-        $( '#register' ) .click(
-        function() {
+
+        function signup() {
         	var hostUrl  = 'main/java/com/example/Main.java';
 	        var Custid   = document.getElementById("custid").value;   //テキストエリアの値を取得
 	        var Custname = document.getElementById("custname").value; //テキストエリアの値を取得
@@ -22,8 +21,7 @@
                 dataType: 'json',
                 data : {parameter1 : Custid, parameter2 : Custname, parameter3 : Orgname, parameter4 : Password }
             })
-   		 });
-    } );
+   		 }
 </script>
 </head>
 
@@ -36,7 +34,7 @@
 			type="text" name="orgname" id="orgname"> <br> </br> <label
 			for="password">Password</label> <br> <br> <input
 			type="password" name="password" id="password"> <br> <br>
-		<input type="button" id=register value="登録">
+		<input type="button" value="登録" onclick="signup();">
 
 	</form>
 </body>
