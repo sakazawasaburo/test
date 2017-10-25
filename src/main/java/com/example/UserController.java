@@ -52,18 +52,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@Controller
-@RequestMapping("/signup")
-public class UserController {
-
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
 
 	@Autowired
 	private DataSource dataSource;
 
-	@RequestMapping("/signup")
-	@WebServlet
+
+	@WebServlet("/UserController")
 	public class UserController extends HttpServlet{
 		private static final long serialVersionUID = 1L;
 
@@ -78,10 +74,10 @@ public class UserController {
 			try (Connection connection = dataSource.getConnection()) {
 				Statement stmt = connection.createStatement();
 				stmt.executeUpdate("INSERT INTO userdata (no,custid, custname,orgname,password,role,reserve) VALUES (3,CUSTID,CUSTNAME,ORGNAME,PASSWORD,'1','ADMIN')");
-				return "signup";
+				return "Account";
 			} catch (Exception e) {
 				//model.put("message", e.getMessage());
-				return "signup";
+				return "Account";
 			}
 		}
 	}
