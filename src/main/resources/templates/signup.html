@@ -1,44 +1,37 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8"></meta>
-<title>signup</title>
-<script
-
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
-	type="text/javascript">
-	function signup(){
-	        var Custid   = document.getElementById("custid").value;   //テキストエリアの値を取得
-	        var Custname = document.getElementById("custname").value; //テキストエリアの値を取得
-	        var Orgname  = document.getElementById("orgname").value;  //テキストエリアの値を取得
-	        var Passord  = document.getElementById("password").value; //テキストエリアの値を取得
-
-			$.ajax({
-                url: "signup.php",
-                type:'POST',
-                data : {post_data_1 : Custid,post_data_2: Custname, post_data_3 : Orgname, post_data_4 : Password }
-            }).done(function(response, textStatus, xhr) {
-			    console.log("ajax通信に成功しました");
-			}).fail(function(xhr, textStatus, errorThrown) {
-			    console.log("ajax通信に失敗しました");
-			});
-   		});
-
-	}
-</script>
+<meta charset="UTF-8" />
+<title>Sign up</title>
 </head>
-
 <body>
-	<form name="signup_form" action="signup.html" method="post">
-		<label for="custid">ID</label> <br> <br> <input type="text"
-			name="custid" id="custid"> <br> </br> <label for="custname">ユーザー名</label>
-		<br> <br> <input type="text" name="custname" id="custname">
-		<br> </br> <label for="orgname">組織名</label> <br> <br> <input
-			type="text" name="orgname" id="orgname"> <br> </br> <label
-			for="password">Password</label> <br> <br> <input
-			type="password" name="password" id="password"> <br> <br>
-		<input type="button" value="登録" onclick = "signup();">
+<h1>Sign up</h1>
 
-	</form>
+<form action="#" th:action="@{/signup}" th:object="${signupForm}" method="post">
+
+	<p><label for="no">NO</label>:
+       <input type="number" id="no" name="no" />
+
+    <p><label for="custid">ID</label>:
+       <input type="text" id="custid" name="custid" />
+
+    <p><label for="custname">ユーザー名</label>:
+       <input type="text" id="custname" name="custname" />
+
+    <p><label for="orgname">組織名</label>:
+       <input type="text" id="orgname" name="orgname" />
+
+    <p><label for="password">Password</label>:
+       <input type="password" id="password" name="password" />
+
+    <p><label for="role">ROLE</label>:
+       <input type="text" id="role" name="role" />
+
+    <p><label for="reserve">RESERVE</label>:
+       <input type="text" id="reserve" name="reserve" />
+
+    <p><input type="submit" value="登録" /></p>
+</form>
+
 </body>
 </html>
