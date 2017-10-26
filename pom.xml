@@ -15,6 +15,10 @@
 	<name>ViewLog</name>
 
 	<properties>
+		<!-- 追加 -->
+		<org.springframework-version>4.1.6.RELEASE</org.springframework-version>
+		<!-- 追加 -->
+
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -25,6 +29,26 @@
 	</properties>
 
 	<dependencies>
+		<!-- 追加 -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>1.8.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.3.11.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<!-- 追加 -->
+
 		<!-- Spring and Spring Boot dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -55,9 +79,6 @@
 	  <artifactId>persistence-api</artifactId>
 	  <version>1.0.2</version>
 	  </dependency>
-	  <!-- Spring Jpa -->
-
-		<!-- Spring Jpa -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
@@ -90,16 +111,6 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
-		<!-- <dependency> <groupId>org.springframework.data</groupId> <artifactId>spring-data-jpa</artifactId>
-			<version>${spring.data.version}</version> </dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency> -->
-
-
 		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
@@ -196,6 +207,17 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- 追加 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<!-- 追加 -->
 		</plugins>
 	</build>
 

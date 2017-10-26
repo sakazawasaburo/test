@@ -1,4 +1,4 @@
-/*package com.example;
+package com.example;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
-//import javax.persistence.ElementCollection;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -25,11 +25,16 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-public class User{
+@Table(name="userdata")
+public class User implements UserDetails {
 
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "no",nullable = false)
+    private int no;
+
     @Column(name = "custid",nullable = false, unique = true)
     private String custid;
 
@@ -42,21 +47,51 @@ public class User{
     @Column(name = "password",nullable = false)
     private String password;
 
-/*
+    @Column(name = "role",nullable = false)
+    private String role;
+
+    @Column(name = "reserve",nullable = false)
+    private String reserve;
+
+
     // JPA requirement
     protected User() {}
 
-    public User(String custid, String custname, String orgname,  String password ) {
+    public User(int no,String custid, String custname, String orgname, String password ,String role,String reserve) {
+    	this.no = no;
     	this.custid = custid;
     	this.custname = custname;
     	this.orgname = orgname;
         this.password = password;
-        //this.enabled = true;
-        //this.authorities = EnumSet.of(Authority.ROLE_USER);
+        this.role = role;
+        this.reserve = reserve;
     }
-*/
-/*
-    //@Override
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+
+    @Override
+    public int getNo() {
+        return no;
+    }
+    public void setNo(int no) {
+        this.custid = custid;
+    }
+
+    @Override
     public String getCustid() {
         return custid;
     }
@@ -64,7 +99,7 @@ public class User{
         this.custid = custid;
     }
 
-    //@Override
+    @Override
     public String getCustname() {
         return custname;
     }
@@ -72,7 +107,7 @@ public class User{
         this.custname = custname;
     }
 
-    //@Override
+    @Override
     public String getOrgname() {
         return orgname;
     }
@@ -80,7 +115,7 @@ public class User{
         this.orgname = orgname;
     }
 
-    //@Override
+    @Override
     public String getPassword() {
         return password;
     }
@@ -88,7 +123,20 @@ public class User{
         this.password = password;
     }
 
+    @Override
+    public String getRole() {
+        return role;
+    }
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    @Override
+    public String getReserve() {
+        return role;
+    }
+    public void setReserve(String reserve) {
+        this.reserve = reserve;
+    }
 
 }
-
-*/

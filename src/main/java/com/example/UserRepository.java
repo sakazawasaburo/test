@@ -1,15 +1,9 @@
-/*package com.example;
+package com.example;
 
-import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import com.example.User;
-
-
+import org.springframework.stereotype.Repository;
 
 @Repository
-@EnableJpaRepositories
-public interface UserRepository extends JpaRepository<User, String> {
-}
-*/
+public interface UserRepository extends JpaRepository<User, int> {
 
+}
