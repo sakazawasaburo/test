@@ -10,6 +10,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
 import com.example.User;
 import com.example.UserService;
 
