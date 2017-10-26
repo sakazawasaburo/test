@@ -17,6 +17,21 @@ public class UserService implements UserDetailsService {
     private PasswordEncoder passwordEncoder;
 
 
+    @Override
+    public User loadUserByUsername(String custname) throws UsernameNotFoundException {
+        if (username == null || "".equals(custname)) {
+            throw new UsernameNotFoundException("Username is empty");
+        }
+
+        User user = repository.findByUsername(custname);
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found: " + username);
+        }
+
+        return user;
+    }
+
+
     @Transactional
     public void registerUser(int no,String custid,String custname,String orgname,String password,String role,String reserve) {
         User user = new User(no,custid,custname,orgname, passwordEncoder.encode(password),role,reserve);
