@@ -31,11 +31,12 @@ public class User implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
+
     @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "no",nullable = false)
     private int no;
 
+    @Id
     @Column(name = "custid",nullable = false, unique = true)
     private String custid;
 
