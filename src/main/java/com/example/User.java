@@ -84,7 +84,7 @@ public class User implements UserDetails {
     }
 
 
-    @Override
+    //@Override
     public int getNo() {
         return no;
     }
@@ -92,7 +92,7 @@ public class User implements UserDetails {
         this.custid = custid;
     }
 
-    @Override
+    //@Override
     public String getCustid() {
         return custid;
     }
@@ -100,7 +100,7 @@ public class User implements UserDetails {
         this.custid = custid;
     }
 
-    @Override
+    //@Override
     public String getCustname() {
         return custname;
     }
@@ -108,7 +108,7 @@ public class User implements UserDetails {
         this.custname = custname;
     }
 
-    @Override
+    //@Override
     public String getOrgname() {
         return orgname;
     }
@@ -116,7 +116,7 @@ public class User implements UserDetails {
         this.orgname = orgname;
     }
 
-    @Override
+    //@Override
     public String getPassword() {
         return password;
     }
@@ -124,7 +124,7 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    @Override
+    //@Override
     public String getRole() {
         return role;
     }
@@ -132,7 +132,7 @@ public class User implements UserDetails {
         this.role = role;
     }
 
-    @Override
+    //@Override
     public String getReserve() {
         return role;
     }
