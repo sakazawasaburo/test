@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class UserService implements UserDetailsService {
+public class UserService
+//implements UserDetailsService
+{
 
     @Autowired
     private UserRepository repository;
@@ -16,7 +18,7 @@ public class UserService implements UserDetailsService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-
+/*
     @Override
     public User loadUserByUsername(String custname) throws UsernameNotFoundException {
         if (username == null || "".equals(custname)) {
@@ -30,7 +32,7 @@ public class UserService implements UserDetailsService {
 
         return user;
     }
-
+*/
 
     @Transactional
     public void registerUser(int no,String custid,String custname,String orgname,String password,String role,String reserve) {
