@@ -27,7 +27,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name="userdata")
-public class User{
+public class User {
 
 	private static final long serialVersionUID = 1L;
 
@@ -75,7 +75,7 @@ public class User{
         return no;
     }
     public void setNo(int no) {
-        this.custid = custid;
+        this.no = no;
     }
 
     //@Override

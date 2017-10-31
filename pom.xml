@@ -33,12 +33,12 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
-			<version>1.8.2.RELEASE</version>
+			<version>1.8.1.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.3.11.Final</version>
+			<version>4.3.10.Final</version>
 		</dependency>
 
 		<dependency>
@@ -46,6 +46,11 @@
 			<artifactId>spring-test</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+
+		<dependency>
+		    <groupId>org.terasoluna.gfw</groupId>
+		    <artifactId>terasoluna-gfw-jpa</artifactId>
+	    </dependency>
 
 		<!-- 追加 -->
 

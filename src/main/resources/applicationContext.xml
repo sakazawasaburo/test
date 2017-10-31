@@ -1,3 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- (1) -->
+<bean id="jpaVendorAdapter"
+    class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+    <!-- (2) -->
+    <property name="showSql" value="false" />
+    <!-- (3) -->
+    <property name="database" value="POSTGRESQL" />
+</bean>
+
+<!-- (4) -->
+<bean id="entityManagerFactory"
+    class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <!-- (5) -->
+    <property name="packagesToScan" value="test.src.main.java.com.example.domain.entity" />
+    <!-- (6) -->
+    <property name="dataSource" ref="dataSource" />
+    <!-- (7) -->
+    <property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+    <!-- (8) -->
+    <property name="jpaPropertyMap">
+        <util:map>
+            <entry key="hibernate.hbm2ddl.auto" value="none" />
+            <entry key="hibernate.ejb.naming_strategy"
+                value="org.hibernate.cfg.ImprovedNamingStrategy" />
+            <entry key="hibernate.connection.charSet" value="UTF-8" />
+            <entry key="hibernate.show_sql" value="false" />
+            <entry key="hibernate.format_sql" value="false" />
+            <entry key="hibernate.use_sql_comments" value="true" />
+            <entry key="hibernate.jdbc.batch_size" value="30" />
+            <entry key="hibernate.jdbc.fetch_size" value="100" />
+        </util:map>
+    </property>
+</bean>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation=".....
+    http://www.springframework.org/schema/data/jpa
+    http://www.springframework.org/schema/data/jpa/spring-jpa.xsd"> <!-- (1) -->
+
+</beans>
+
+<jpa:repositories base-package="test.src.main.java.com.example.domain.repository" /> <!-- (2) -->
+
+
+
+
+
+
+
+
+
 <!--
 <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <beans:property name="driverClassName" value="${jdbc.driverClassName}" />

@@ -85,5 +85,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+/*
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource){
+
+        HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
+        adapter.setShowSql(true);
+        adapter.setDatabase(Database.HSQL);
+
+        Properties props = new Properties();
+        props.setProperty("hibernate.ejb.naming_strategy", "org.hibernate.cfg.ImprovedNamingStrategy");
+
+        LocalContainerEntityManagerFactoryBean emfb =
+            new LocalContainerEntityManagerFactoryBean();
+        emfb.setJpaVendorAdapter(adapter);
+        emfb.setJpaProperties(props);
+        emfb.setDataSource(dataSource);
+        emfb.setPackagesToScan("sample.jpa.business.domain");
+
+        return emfb;
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
+        return new JpaTransactionManager(emf);
+    }
+*/
 
 }
