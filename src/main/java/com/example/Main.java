@@ -55,32 +55,32 @@ public class Main extends HttpServlet{
 	private DataSource dataSource;
 
 	@Autowired
-    UserService userService;
+	UserService userService;
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(Main.class, args);
 	}
 
 	@GetMapping("/signup")
-    public String signup(Model model) {
-        model.addAttribute("signupForm", new SignupForm());
-        return "signup";
-    }
+	public String signup(Model model) {
+		model.addAttribute("signupForm", new SignupForm());
+		return "signup";
+	}
 
-    @PostMapping("/signup")
-    public String signupPost(Model model, @Valid SignupForm signupForm, BindingResult bindingResult, HttpServletRequest request) {
-        if (bindingResult.hasErrors()) {
-            return "signup";
-        }
+	@PostMapping("/signup")
+	public String signupPost(Model model, @Valid SignupForm signupForm, BindingResult bindingResult, HttpServletRequest request) {
+		if (bindingResult.hasErrors()) {
+			return "signup";
+		}
 
-        try {
-            userService.registerUser(signupForm.getNo(),signupForm.getCustid(),signupForm.getCustname(),signupForm.getOrgname(),signupForm.getPassword(),signupForm.getRole(),signupForm.getReserve());
-        } catch (DataIntegrityViolationException e) {
-            return "signup";
-        }
+		try {
+			userService.registerUser(signupForm.getNo(),signupForm.getCustid(),signupForm.getCustname(),signupForm.getOrgname(),signupForm.getPassword(),signupForm.getRole(),signupForm.getReserve());
+		} catch (DataIntegrityViolationException e) {
+			return "signup";
+		}
 
-        return "signup";
-    }
+		return "signup";
+	}
 
 
 	@Bean
@@ -96,4 +96,3 @@ public class Main extends HttpServlet{
 	}
 }
 
-*/
