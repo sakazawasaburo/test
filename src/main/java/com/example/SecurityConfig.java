@@ -56,7 +56,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .userDetailsService(userService)
             .passwordEncoder(passwordEncoder())
         	.dataSource(dataSource);
-
     }
 
 
