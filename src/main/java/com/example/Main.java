@@ -46,7 +46,7 @@ import java.util.HashMap;
 
 @Controller
 @SpringBootApplication
-public class Main extends HttpServlet{
+public class Main{
 
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
