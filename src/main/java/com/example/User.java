@@ -69,32 +69,6 @@ public class User{
         this.reserve = reserve;
     }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-
-/*
-    @Override
-    public boolean isEnabled() {
-        return  enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-*/
 
     //@Override
     public int getNo() {
