@@ -1,5 +1,4 @@
-
-/*package com.example;
+package com.example;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -44,10 +43,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @SpringBootApplication
@@ -59,31 +54,33 @@ public class Main extends HttpServlet{
 	@Autowired
 	private DataSource dataSource;
 
+	@Autowired
+    UserService userService;
+
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(Main.class, args);
 	}
 
-	@RequestMapping({"/","/login"})
-	String login() {
-		return "login";
-	}
+	@GetMapping("/signup")
+    public String signup(Model model) {
+        model.addAttribute("signupForm", new SignupForm());
+        return "signup";
+    }
 
-	@RequestMapping("/Home")
-	String Home() {
-		return "Home";
-	}
+    @PostMapping("/signup")
+    public String signupPost(Model model, @Valid SignupForm signupForm, BindingResult bindingResult, HttpServletRequest request) {
+        if (bindingResult.hasErrors()) {
+            return "signup";
+        }
 
+        try {
+            userService.registerUser(signupForm.getNo(),signupForm.getCustid(),signupForm.getCustname(),signupForm.getOrgname(),signupForm.getPassword(),signupForm.getRole(),signupForm.getReserve());
+        } catch (DataIntegrityViolationException e) {
+            return "signup";
+        }
 
-	@RequestMapping("/Account")
-	String Account() {
-		return "Account";
-	}
-
-
-	@RequestMapping("/logview")
-	String logview() {
-		return "logview";
-	}
+        return "signup";
+    }
 
 
 	@Bean
