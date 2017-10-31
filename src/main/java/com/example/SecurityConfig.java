@@ -58,13 +58,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-    //@Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    /*
+   @Override
+   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
             .passwordEncoder(passwordEncoder());
 
     }
-
+*/
 
     @Bean
 	@ConfigurationProperties("spring.datasource")
