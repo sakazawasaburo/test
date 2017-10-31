@@ -20,6 +20,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import javax.persistence.EntityManagerFactory;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+
 import com.example.User;
 import com.example.UserService;
 
