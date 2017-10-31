@@ -82,7 +82,7 @@ public class Main{
 		return "signup";
 	}
 
-
+/*
 	@Bean
 	@ConfigurationProperties("spring.datasource")
 	public DataSource dataSource() throws SQLException {
@@ -94,5 +94,6 @@ public class Main{
 			return new HikariDataSource(config);
 		}
 	}
+	*/
 }
 
