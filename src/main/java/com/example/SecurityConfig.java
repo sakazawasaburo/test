@@ -42,12 +42,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserService userService;
 
+    /*
     @Value("${spring.datasource.url}")
 	private String dbUrl;
 
     @Autowired
 	@Qualifier("dataSource")
 	private DataSource dataSource;
+	*/
 
 
     @Override
@@ -58,15 +60,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-    /*
-   @Override
-   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-            .passwordEncoder(passwordEncoder());
-
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
-*/
 
+
+    /*
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+         auth
+             .passwordEncoder(passwordEncoder());
+
+     }
+ */
+
+
+/*
     @Bean
 	@ConfigurationProperties("spring.datasource")
 	public DataSource dataSource() throws SQLException {
@@ -78,11 +88,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			return new HikariDataSource(config);
 		}
 	}
+*/
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 
 /*
     @Bean
