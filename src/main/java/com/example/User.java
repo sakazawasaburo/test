@@ -27,7 +27,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name="userdata")
-public class User implements UserDetails {
+public class User{
 
 	private static final long serialVersionUID = 1L;
 
