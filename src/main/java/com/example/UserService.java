@@ -35,9 +35,11 @@ public class UserService
 */
 
     @Transactional
-    public void registerUser(int no,String custid,String custname,String orgname,String password,String role,String reserve) {
-        User user = new User(no,custid,custname,orgname, passwordEncoder.encode(password),role,reserve);
-        repository.save(user);
+    //public void registerUser(int no,String custid,String custname,String orgname,String password,String role,String reserve) {
+        //User user = new User(no,custid,custname,orgname, passwordEncoder.encode(password),role,reserve);
+    	public void registerUser() {
+    	User user = new User(5,"abcdefg","すいか太郎","行政システム","hijklmn","1","ADMIN");
+    	repository.save(user);
     }
 
 }
