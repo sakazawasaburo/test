@@ -32,7 +32,7 @@ public class User {
 	private static final long serialVersionUID = 1L;
 
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "no",nullable = false)
     private int no;
 
