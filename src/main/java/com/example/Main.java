@@ -1,8 +1,5 @@
 package com.example;
 
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -61,14 +58,15 @@ public class Main{
 	//@Autowired
 	//UserService userService;
 
+	@Autowired
+    private UserRepository repository;
 
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(Main.class, args);
 	}
 
-	@Autowired
-    UserRepository repository;
+
 
 
 	@RequestMapping("/signup")
