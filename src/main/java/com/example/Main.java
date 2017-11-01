@@ -77,7 +77,7 @@ public class Main{
 	}
 
 	@Autowired
-    private UserRepository repository;
+    UserRepository repository;
 
 
 	@RequestMapping("/signup")
