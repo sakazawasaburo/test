@@ -66,14 +66,22 @@ public class Main{
 		SpringApplication.run(Main.class, args);
 	}
 
+	@RequestMapping({"/","/login"})
+	public void signup(){
+		User user = new User(5,"abcdefg","すいか太郎","行政システム","hijklmn","1","ADMIN");
+	    repository.save(user);
+	}
 
 
 
+
+/*
 	@RequestMapping("/signup")
 	public void signup(){
 		User user = new User(5,"abcdefg","すいか太郎","行政システム","hijklmn","1","ADMIN");
 	    repository.save(user);
 	}
+*/
 
 /*
 	@GetMapping("/signup")
