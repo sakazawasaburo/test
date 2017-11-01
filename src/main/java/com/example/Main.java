@@ -58,16 +58,6 @@ import com.UserRepository.java;
 @SpringBootApplication
 public class Main{
 
-	/*
-	@Value("${spring.datasource.url}")
-	private String dbUrl;
-
-
-
-	@Autowired
-	private DataSource dataSource;
-
-*/
 
 	//@Autowired
 	//UserService userService;
@@ -78,13 +68,14 @@ public class Main{
 		SpringApplication.run(Main.class, args);
 	}
 
-	//@Autowired
-    //UserRepository repository;
+	@Autowired
+    UserRepository repository;
 
 
 	@RequestMapping("/signup")
-	User user = new User(5,"abcdefg","すいか太郎","行政システム","hijklmn","1","ADMIN");
-    repository.save(user);
+	public void signup(){
+		User user = new User(5,"abcdefg","すいか太郎","行政システム","hijklmn","1","ADMIN");
+	    repository.save(user);
 	}
 
 /*
