@@ -51,6 +51,8 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 
+import com.UserRepository;
+
 
 @Controller
 @SpringBootApplication
@@ -76,8 +78,8 @@ public class Main{
 		SpringApplication.run(Main.class, args);
 	}
 
-	@Autowired
-    UserRepository repository;
+	//@Autowired
+    //UserRepository repository;
 
 
 	@RequestMapping("/signup")
