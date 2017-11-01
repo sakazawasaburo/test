@@ -39,10 +39,11 @@ import com.example.User;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+	/*
     @Autowired
     private UserService userService;
 
-    /*
+
     @Value("${spring.datasource.url}")
 	private String dbUrl;
 
