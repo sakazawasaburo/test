@@ -67,13 +67,24 @@ public class Main{
 
 */
 
+	//@Autowired
+	//UserService userService;
+
 	@Autowired
-	UserService userService;
+    private UserRepository repository;
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(Main.class, args);
 	}
 
+
+
+	@RequestMapping("/signup")
+	User user = new User(5,"abcdefg","すいか太郎","行政システム","hijklmn","1","ADMIN");
+    repository.save(user);
+	}
+
+/*
 	@GetMapping("/signup")
 	public String signup(Model model) {
 		model.addAttribute("signupForm", new SignupForm());
@@ -94,5 +105,7 @@ public class Main{
 
 		return "signup";
 	}
+
+*/
 
 }
