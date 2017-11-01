@@ -70,13 +70,14 @@ public class Main{
 	//@Autowired
 	//UserService userService;
 
-	@Autowired
-    private UserRepository repository;
+
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(Main.class, args);
 	}
 
+	@Autowired
+    private UserRepository repository;
 
 
 	@RequestMapping("/signup")
